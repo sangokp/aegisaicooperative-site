@@ -1,0 +1,72 @@
+{
+  "headline": "Insights",
+  "subheadline": "Thoughts on trust architecture, AI governance, and building AI systems that actually work for people.",
+  "categories": ["All", "Trust Architecture", "Technical", "Methodology", "Non-Profit"],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Why Trust Architecture is the Future of Enterprise AI",
+      "excerpt": "As AI systems become more capable, the question isn't just 'can it do the task?' but 'can we trust it to do the task correctly?' We explore why trust architecture matters.",
+      "category": "Trust Architecture",
+      "date": "2026-01-05",
+      "readTime": "8 min read",
+      "slug": "trust-architecture-future",
+      "published": true
+    },
+    {
+      "id": 2,
+      "title": "Multi-Agent Verification: How Multiple AI Systems Keep Each Other Honest",
+      "excerpt": "One AI can hallucinate. Multiple AIs checking each other's work? That's a different story. Learn how multi-agent verification creates accountability.",
+      "category": "Technical",
+      "date": "2026-01-02",
+      "readTime": "6 min read",
+      "slug": "multi-agent-verification",
+      "published": true
+    },
+    {
+      "id": 3,
+      "title": "From Pilot to Production: The Progressive Autonomy Model",
+      "excerpt": "Start with close supervision, expand as trust is earned. We explain AEGIS's approach to gradually increasing AI independence.",
+      "category": "Methodology",
+      "date": "2025-12-28",
+      "readTime": "5 min read",
+      "slug": "progressive-autonomy-model",
+      "published": true
+    },
+    {
+      "id": 4,
+      "title": "Grant Funding + AI: How Non-Profits Can Track Real Impact",
+      "excerpt": "Grant funders want to see results, not just promises. Here's how AEGIS helps 501(c)(3) organizations prove their AI programs deliver.",
+      "category": "Non-Profit",
+      "date": "2025-12-20",
+      "readTime": "7 min read",
+      "slug": "grant-funding-ai-impact",
+      "published": true
+    },
+    {
+      "id": 5,
+      "title": "The Case Against Black-Box AI in Business",
+      "excerpt": "If you can't explain what your AI is doing, you can't trust it. We make the case for transparent, auditable AI systems.",
+      "category": "Trust Architecture",
+      "date": "2025-12-15",
+      "readTime": "6 min read",
+      "slug": "against-black-box-ai",
+      "published": true
+    },
+    {
+      "id": 6,
+      "title": "Sandbox Isolation: Why Your AI Needs a Safe Testing Ground",
+      "excerpt": "Before an AI touches your real systems, it should prove itself in isolation. Learn about our sandbox-first approach to deployment.",
+      "category": "Technical",
+      "date": "2025-12-10",
+      "readTime": "5 min read",
+      "slug": "sandbox-isolation",
+      "published": true
+    }
+  ],
+  "newsletter": {
+    "headline": "Stay updated",
+    "subheadline": "Get our latest insights on trust architecture and AI governance delivered to your inbox.",
+    "cta": "Get in touch"
+  }
+}

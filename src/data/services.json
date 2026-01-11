@@ -1,0 +1,79 @@
+{
+  "headline": "What we build",
+  "subheadline": "AI systems designed for trust, accountability, and real-world results.",
+  "services": [
+    {
+      "id": "trust-architecture",
+      "icon": "Shield",
+      "title": "Trust Architecture Consulting",
+      "description": "Help enterprises implement AI governance frameworks that balance innovation with accountability. We design systems where AI earns trust through verified behavior.",
+      "features": [
+        "AI governance framework design",
+        "Risk assessment and mitigation",
+        "Compliance and audit preparation",
+        "Trust hierarchy implementation"
+      ]
+    },
+    {
+      "id": "secure-development",
+      "icon": "Code",
+      "title": "Secure AI Development",
+      "description": "Build custom AI systems with privacy-native design. Your data stays yours, and every action is auditable.",
+      "features": [
+        "Custom AI agent development",
+        "Privacy-first architecture",
+        "Sandbox isolation setup",
+        "Security hardening"
+      ]
+    },
+    {
+      "id": "strategy-research",
+      "icon": "Lightbulb",
+      "title": "AI Strategy & Research",
+      "description": "Translate cutting-edge AI research into practical applications for your business. We separate hype from reality.",
+      "features": [
+        "Technology assessment",
+        "Implementation roadmaps",
+        "Proof of concept development",
+        "Research-backed recommendations"
+      ]
+    },
+    {
+      "id": "agentic-workflows",
+      "icon": "Network",
+      "title": "Agentic Workflow Design",
+      "description": "Design and implement multi-agent systems that collaborate effectively while maintaining human oversight.",
+      "features": [
+        "Multi-agent orchestration",
+        "Workflow automation",
+        "Human-in-the-loop design",
+        "Progressive autonomy scaling"
+      ]
+    }
+  ],
+  "process": {
+    "headline": "How we work",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Discovery",
+        "description": "We start by understanding your organization, your constraints, and what success looks like. No cookie-cutter solutions."
+      },
+      {
+        "step": "02",
+        "title": "Design",
+        "description": "We architect a solution with trust built in from day one. You'll see exactly what we're building and why."
+      },
+      {
+        "step": "03",
+        "title": "Build",
+        "description": "Iterative development with continuous feedback. You're never surprised by what we deliver."
+      },
+      {
+        "step": "04",
+        "title": "Deploy & Support",
+        "description": "We don't just hand off code. We ensure your team can operate, monitor, and evolve the system confidently."
+      }
+    ]
+  }
+}

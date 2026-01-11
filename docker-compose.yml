@@ -1,0 +1,54 @@
+# AEGIS AI Cooperative Website - Docker Compose
+# For VPS deployment with Traefik reverse proxy
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aegis-cooperative-site
+    labels:
+      # Traefik configuration for aegisaicooperative.com
+      - "traefik.enable=true"
+
+      # HTTP router for root domain and www subdomain
+      - "traefik.http.routers.aegis-cooperative.rule=Host(`aegisaicooperative.com`) || Host(`www.aegisaicooperative.com`)"
+      - "traefik.http.routers.aegis-cooperative.entrypoints=web,websecure"
+      - "traefik.http.routers.aegis-cooperative.tls=true"
+      - "traefik.http.routers.aegis-cooperative.tls.certresolver=mytlschallenge"
+      - "traefik.http.routers.aegis-cooperative.service=aegis-cooperative-service"
+      - "traefik.http.services.aegis-cooperative-service.loadbalancer.server.port=80"
+
+      # WWW to non-WWW redirect middleware
+      - "traefik.http.middlewares.aegis-coop-redirect.redirectregex.regex=^https?://www\\.aegisaicooperative\\.com/(.*)"
+      - "traefik.http.middlewares.aegis-coop-redirect.redirectregex.replacement=https://aegisaicooperative.com/$${1}"
+      - "traefik.http.middlewares.aegis-coop-redirect.redirectregex.permanent=true"
+
+      # Security headers middleware
+      - "traefik.http.middlewares.aegis-coop-headers.headers.SSLRedirect=true"
+      - "traefik.http.middlewares.aegis-coop-headers.headers.STSSeconds=315360000"
+      - "traefik.http.middlewares.aegis-coop-headers.headers.browserXSSFilter=true"
+      - "traefik.http.middlewares.aegis-coop-headers.headers.contentTypeNosniff=true"
+      - "traefik.http.middlewares.aegis-coop-headers.headers.forceSTSHeader=true"
+      - "traefik.http.middlewares.aegis-coop-headers.headers.STSIncludeSubdomains=true"
+      - "traefik.http.middlewares.aegis-coop-headers.headers.STSPreload=true"
+      - "traefik.http.middlewares.aegis-coop-headers.headers.frameDeny=true"
+
+      # Apply middlewares
+      - "traefik.http.routers.aegis-cooperative.middlewares=aegis-coop-redirect@docker,aegis-coop-headers@docker"
+
+      # Specify Docker network for Traefik
+      - "traefik.docker.network=root_default"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    networks:
+      - root_default
+
+networks:
+  root_default:
+    external: true

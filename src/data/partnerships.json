@@ -1,0 +1,57 @@
+{
+  "headline": "Strategic alliances & public sector",
+  "subheadline": "Empowering non-profits with enterprise-grade AI.",
+  "models": [
+    {
+      "id": "sponsors",
+      "title": "For sponsors",
+      "description": "Your funding supports registered non-profits (501c3). AEGIS acts as the technical execution arm, translating STEM and innovation grants into deployed, measurable AI infrastructure.",
+      "cta": {
+        "text": "Discuss partnership",
+        "link": "/contact"
+      }
+    },
+    {
+      "id": "impact",
+      "title": "For impact",
+      "description": "AEGIS ensures grant funds deliver audited, high-ROI technical solutions—not just \"awareness.\" Our Trust Architecture provides granular impact logs for every dollar spent.",
+      "cta": {
+        "text": "Learn more",
+        "link": "/contact"
+      }
+    }
+  ],
+  "featured": {
+    "badge": "Exclusive Technical Partner",
+    "name": "Arizona Asian American Association (4A)",
+    "focus": "STEM Acceleration & AI Literacy Infrastructure",
+    "description": "AEGIS serves as the exclusive technical execution partner for 4A's STEM initiatives, deploying AI literacy programs and educational infrastructure for the Arizona Asian American community.",
+    "url": "https://azasianamerican.com/",
+    "cta": "Learn about 4A"
+  },
+  "engagement": {
+    "headline": "Partner with us",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Initial Consultation",
+        "description": "We discuss your mission, target demographic, and funding sources to understand how AEGIS can amplify your impact."
+      },
+      {
+        "step": "02",
+        "title": "Scope & Proposal",
+        "description": "We design a technical solution aligned with your grant requirements, including compliance documentation."
+      },
+      {
+        "step": "03",
+        "title": "Deployment",
+        "description": "We build and deploy the infrastructure while you focus on community engagement."
+      },
+      {
+        "step": "04",
+        "title": "Impact Reporting",
+        "description": "Ongoing audit trails and dashboards to prove ROI to funders and stakeholders."
+      }
+    ]
+  }
+}
