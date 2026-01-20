@@ -1,130 +1,205 @@
+/* 1. Typography - High-End Editorial Selection */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+
 @import "tailwindcss";
-/* Fonts loaded via index.html for proper loading order */
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   AEGIS DESIGN SYSTEM - "AEGIS NOIR" (v2.0 - 8-Figure Polish)
+   Now with Light Mode: "AEGIS DAWN" (Peachy Warmth)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Theme CSS Variables */
 :root {
-  --background: #0a0a0b;
-  --surface: #111113;
-  --muted: #18181b;
-  --foreground: #fafafa;
-  --foreground-muted: #a1a1aa;
-  --accent: #3b82f6;
-  --accent-dark: #2563eb;
-  --border: #27272a;
+  /* Dark Mode (Default) */
+  --aegis-void: #0a0a0b;
+  --aegis-engine: #0d0d0e;
+  --aegis-charcoal: #111113;
+  --aegis-surface: #18181b;
+  --aegis-text-primary: #fafafa;
+  --aegis-text-secondary: #a1a1aa;
+  --aegis-text-muted: #71717a;
+  --aegis-accent: #3b82f6;
+  --aegis-accent-hover: #2563eb;
+  --aegis-accent-muted: rgba(59, 130, 246, 0.15);
+  --aegis-gold: #d4af37;
+  --aegis-border: rgba(255, 255, 255, 0.08);
+  --aegis-border-hover: rgba(255, 255, 255, 0.15);
+  --aegis-glass-bg: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+  --aegis-glass-border: rgba(255, 255, 255, 0.05);
+  --aegis-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.3);
+  --aegis-theme-duration: 800ms;
+  --aegis-theme-ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Light Mode (Peachy Warmth) */
+:root.light,
+.light {
+  --aegis-void: #faf9f7;
+  --aegis-engine: #f5f3f0;
+  --aegis-charcoal: #edebe8;
+  --aegis-surface: #ffffff;
+  --aegis-text-primary: #1a1a1f;
+  --aegis-text-secondary: #4a4a52;
+  --aegis-text-muted: #6b6b75;
+  --aegis-accent: #FF7E5F;
+  --aegis-accent-hover: #e86a4d;
+  --aegis-accent-muted: rgba(255, 126, 95, 0.12);
+  --aegis-gold: #c9a030;
+  --aegis-border: rgba(0, 0, 0, 0.08);
+  --aegis-border-hover: rgba(0, 0, 0, 0.15);
+  --aegis-glass-bg: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.6) 100%);
+  --aegis-glass-border: rgba(0, 0, 0, 0.08);
+  --aegis-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.1);
 }
 
-html {
-  scroll-behavior: smooth;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
+@theme inline {
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-ui: 'Inter', sans-serif;
+
+  /* 2. Color Palette - Now using CSS variables for theme support */
+  --color-void: var(--aegis-void);
+  --color-charcoal: var(--aegis-charcoal);
+  --color-glass: oklch(0.18 0.03 280 / 0.4);
+
+  --color-accent: var(--aegis-accent);
+  --color-accent-dim: var(--aegis-accent-hover);
+  --color-gold: var(--aegis-gold);
+
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
 }
 
-body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background-color: var(--background);
-  color: var(--foreground);
-  line-height: 1.6;
-  min-height: 100vh;
+@layer base {
+  /* Global Reset & Texture */
+  body {
+    background-color: var(--aegis-void);
+    color: var(--aegis-text-primary);
+    font-family: var(--font-ui);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    transition: background-color var(--aegis-theme-duration) var(--aegis-theme-ease),
+                color var(--aegis-theme-duration) var(--aegis-theme-ease);
+  }
+
+  /* Noise Texture Overlay */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: overlay;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
 }
 
-#root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+@layer utilities {
+  /* 3. Advanced Glassmorphism */
+  .glass-panel {
+    background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 
+      0 4px 24px -1px rgba(0,0,0,0.3),
+      inset 0 1px 0 0 rgba(255,255,255,0.05);
+  }
 
-.container-custom {
-  max-width: 80rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
+  .glass-panel-hover {
+    transition: all 0.5s var(--ease-fluid);
+  }
+  
+  .glass-panel-hover:hover {
+    background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+    border-color: rgba(255,255,255,0.12);
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 
+      0 30px 60px -12px rgba(0,0,0,0.5),
+      inset 0 1px 0 0 rgba(255,255,255,0.1);
+  }
 
-@media (min-width: 640px) {
+  /* 4. Text Gradients & Effects */
+  .text-glow {
+    text-shadow: 0 0 30px rgba(96, 165, 250, 0.4);
+  }
+
+  .text-gradient-white {
+    background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0.4) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  /* 5. Animations */
+  @keyframes float-slow {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(0, -30px); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+  }
+
+  .animate-float {
+    animation: float-slow 10s ease-in-out infinite;
+  }
+
+  /* 7. High-End Kinetic Elements */
+  .spotlight {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(96, 165, 250, 0.06),
+      transparent 40%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .text-reveal {
+    background: linear-gradient(to right, white 0%, white 50%, rgba(255,255,255,0.1) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: reveal 2s var(--ease-fluid) forwards;
+  }
+
+  @keyframes reveal {
+    to { background-position: -100% center; }
+  }
+
+  /* 6. Utility Classes */
   .container-custom {
+    max-width: 90rem;
+    margin-left: auto;
+    margin-right: auto;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
-}
 
-@media (min-width: 1024px) {
-  .container-custom {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  .btn-premium {
+    @apply relative px-10 py-4 font-display font-bold text-sm uppercase tracking-widest rounded-full transition-all duration-500 overflow-hidden;
+    background: white;
+    color: black;
   }
-}
 
-/* Primary Button */
-.btn-primary {
-  background-color: var(--accent);
-  color: #fff;
-  padding: 0.75rem 2rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  display: inline-block;
-  border: none;
-  letter-spacing: 0.01em;
-  text-align: center;
-}
+  .btn-premium:hover {
+    @apply scale-105 shadow-2xl;
+    box-shadow: 0 0 40px rgba(255,255,255,0.2);
+  }
 
-.btn-primary:hover {
-  background-color: var(--accent-dark);
-  transform: translateY(-2px);
-}
-
-.btn-primary:active {
-  transform: translateY(0);
-}
-
-/* Secondary Button */
-.btn-secondary {
-  background-color: transparent;
-  color: var(--foreground);
-  padding: 0.75rem 2rem;
-  border-radius: 0.5rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  display: inline-block;
-  border: 1px solid var(--border);
-  text-align: center;
-}
-
-.btn-secondary:hover {
-  background-color: var(--surface);
-  border-color: var(--foreground-muted);
-  transform: translateY(-2px);
-}
-
-.btn-secondary:active {
-  transform: translateY(0);
-}
-
-.section-heading {
-  @apply text-4xl md:text-5xl font-bold tracking-tight;
-  color: var(--foreground);
-}
-
-.section-subheading {
-  @apply text-xl font-light max-w-2xl;
-  color: var(--foreground-muted);
-}
-
-/* Selection color */
-::selection {
-  background-color: rgba(59, 130, 246, 0.3);
-}
-
-/* Link styles */
-a {
-  color: inherit;
-  text-decoration: none;
+  .btn-outline-premium {
+    @apply relative px-10 py-4 font-display font-bold text-sm uppercase tracking-widest rounded-full transition-all duration-500 border border-white/20 hover:border-white/40 hover:bg-white/5;
+  }
 }

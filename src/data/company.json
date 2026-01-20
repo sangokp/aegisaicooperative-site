@@ -1,14 +1,14 @@
 {
   "hero": {
-    "headline": "Trusted multi-agent systems that can safely do real work",
-    "subheadline": "AEGIS AI Cooperative builds reliable, secure AI systems for businesses and community organizations—designed to stay under your control while proving real results.",
+    "headline": "A Think Tank for the Future of Community Intelligence",
+    "subheadline": "AEGIS AI Cooperative builds human-centric infrastructure for STEM education and community advancement—forging a future where technology empowers people without complexity or fear.",
     "cta": {
       "primary": {
-        "text": "Schedule consultation",
+        "text": "Initialize Partnership",
         "link": "/contact"
       },
       "secondary": {
-        "text": "Our approach",
+        "text": "Read the Manifesto",
         "link": "/about"
       }
     }
@@ -16,73 +16,75 @@
   "proofStrip": [
     {
       "icon": "Shield",
-      "label": "Sandbox-isolated execution"
+      "label": "Safety-First Architecture"
     },
     {
       "icon": "Users",
-      "label": "Multi-agent verification"
+      "label": "Community Aligned"
     },
     {
       "icon": "BookOpen",
-      "label": "Auditable by design"
+      "label": "STEM Empowered"
     },
     {
       "icon": "Check",
-      "label": "Progressive autonomy"
+      "label": "Radical Transparency"
     }
   ],
   "grantServices": {
-    "headline": "Technical fulfillment for innovation grants",
-    "subheadline": "Don't just fund a concept—contract AEGIS to deploy working infrastructure.",
+    "headline": "Infrastructure for the Next Generation",
+    "subheadline": "We turn visionary concepts into reliable community infrastructure, focused on education, accessibility, and trust.",
     "services": [
       {
+        "id": "stem-programs",
         "icon": "BookOpen",
-        "title": "Turnkey STEM Programs",
-        "description": "We deploy sandbox-isolated educational AI platforms for your target demographic. You handle community interface; we handle the engineering, governance, and compliance.",
+        "title": "Community STEM Infrastructure",
+        "description": "We architect secure, easy-to-use platforms that bring advanced technical literacy to students, parents, and community leaders. We handle the engineering complexity so you can focus on the impact.",
         "features": [
-          "Safe AI systems with built-in safeguards",
-          "Track every action for easy grant reporting",
-          "You control the pace—start supervised, expand as you're ready"
+          "Curated educational tools without the scare-tactics",
+          "Safe, sandboxed learning environments",
+          "Simplified tracking for student and community progress"
         ]
       },
       {
+        "id": "grant-fulfillment",
         "icon": "Shield",
-        "title": "Grant Impact Auditing",
-        "description": "Our Trust Architecture provides granular impact logs for every dollar of grant funding. Prove exactly how AI was used, ensuring compliance with grant mandates.",
+        "title": "Grant Performance Auditing",
+        "description": "Our transparent architecture ensures that every grant dollar is accounted for. We provide clear, plain-english reports that prove community impact and mandate compliance.",
         "features": [
-          "Permanent record of all AI actions for accountability",
-          "Clear dashboards showing real results",
-          "Reports ready for grant compliance reviews"
+          "Permanent, readable records of system utility",
+          "Stakeholder-friendly impact dashboards",
+          "Automated compliance reporting for officials"
         ]
       }
     ]
   },
   "differentiators": {
-    "headline": "Why choose AEGIS",
+    "headline": "The Cooperative Difference",
     "items": [
       {
-        "title": "Built-in safety checks",
-        "description": "Multiple systems verify each action before it happens, so mistakes are caught early. Your AI stays reliable and predictable."
+        "title": "Designed for People, Not Agendas",
+        "description": "We don't chase AGI or silicon-valley hype. We build practical tools that solve real-world community problems today."
       },
       {
-        "title": "Protected testing environment",
-        "description": "AI works in a secure, isolated space where it can't accidentally affect your real systems. Think of it like a practice area where nothing can go wrong."
+        "title": "Safe & Familiar Foundations",
+        "description": "Our systems operate in secure, isolated environments. We prioritize safety and ease-of-use above all else, making technology feel like a helper, not a replacement."
       },
       {
-        "title": "You stay in control",
-        "description": "Start with close oversight, then gradually allow more independence as the AI proves itself. You decide the pace—never forced into full automation."
+        "title": "Human-Led Progress",
+        "description": "The cooperative model ensures our incentives match the community's. You always have the final say in how systems are deployed and scaled."
       },
       {
-        "title": "Complete transparency",
-        "description": "See exactly what your AI is doing and why. Every decision is recorded and reviewable, making it easy to prove ROI to stakeholders."
+        "title": "Plain-English Transparency",
+        "description": "We remove the jargon. You'll always understand exactly how our systems work, what they're doing, and why they are being used."
       }
     ]
   },
   "cta": {
-    "headline": "Experience AI that respects you",
-    "subheadline": "No hype. No data resale. Just practical tools.",
+    "headline": "Building a Brighter, Shared Future",
+    "subheadline": "Interested in bringing elite-level technical infrastructure to your organization or community?",
     "button": {
-      "text": "Request a Demo",
+      "text": "Initialize Consultation",
       "link": "/contact"
     }
   }

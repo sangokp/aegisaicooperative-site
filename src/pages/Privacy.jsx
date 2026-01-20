@@ -1,75 +1,61 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Shield, Eye, Lock, Globe } from 'lucide-react';
 
 export default function Privacy() {
   return (
-    <div className="pt-16 pb-24">
-      <section className="py-20">
-        <div className="container-custom">
+    <div className="relative overflow-hidden bg-[var(--color-void)] min-h-screen">
+      <section className="relative pt-48 pb-32">
+        <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-3xl mx-auto"
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-8 text-zinc-100">Privacy Policy</h1>
+            <div className="flex items-center gap-4 mb-8">
+              <Shield className="text-[var(--color-gold)] w-8 h-8" />
+              <span className="font-mono text-xs uppercase tracking-[0.3em] text-[var(--aegis-text-muted)]">Data Governance Protocol</span>
+            </div>
+            
+            <h1 className="font-display text-6xl md:text-8xl font-bold text-[var(--aegis-text-primary)] tracking-tighter mb-16 text-gradient-white">PRIVACY<br />PROTOCOL</h1>
 
-            <div className="prose prose-lg text-zinc-100/70 space-y-6">
-              <p className="text-lg">
-                <strong>Last updated:</strong> January 2026
-              </p>
+            <div className="glass-panel rounded-[3rem] p-10 md:p-16 border border-white/5 bg-[var(--color-charcoal)]/30 space-y-12 font-body">
+              
+              <div className="space-y-6">
+                <h2 className="text-2xl font-display font-bold text-white uppercase tracking-wide">01 — The Commitment</h2>
+                <p className="text-[var(--aegis-text-secondary)] text-lg font-light leading-relaxed">
+                  AEGIS AI Cooperative is built on trust architecture. We believe in radical transparency, user sovereignty, and the absolute minimization of data collection.
+                </p>
+              </div>
 
-              <h2 className="text-2xl font-bold text-zinc-100 mt-8 mb-4">Our Commitment</h2>
-              <p>
-                AEGIS AI Cooperative is built on trust architecture—and that starts with how we handle your data. We believe in transparency, user sovereignty, and minimal data collection.
-              </p>
+              <div className="space-y-6">
+                <h2 className="text-2xl font-display font-bold text-white uppercase tracking-wide">02 — Data Collection</h2>
+                <ul className="grid gap-4">
+                  {[
+                    { icon: Globe, text: 'Identity: Minimal contact details for inquiry fulfillment.' },
+                    { icon: Eye, text: 'Telemetry: Non-identifying performance metrics.' },
+                    { icon: Lock, text: 'Security: Technical logs for threat mitigation.' }
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-4 text-[var(--aegis-text-muted)] font-light">
+                      <item.icon size={18} className="text-[var(--color-accent)]" /> {item.text}
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-              <h2 className="text-2xl font-bold text-zinc-100 mt-8 mb-4">Information We Collect</h2>
-              <p>
-                We collect only what's necessary to provide our services:
-              </p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Contact information you provide (name, email) when reaching out</li>
-                <li>Usage data to improve our services</li>
-                <li>Technical information for security and performance</li>
-              </ul>
+              <div className="space-y-6">
+                <h2 className="text-2xl font-display font-bold text-white uppercase tracking-wide">03 — Distribution</h2>
+                <p className="text-[var(--aegis-text-secondary)] text-lg font-light leading-relaxed">
+                  We do not monetize your information. Data is shared only under explicit consent, direct legal mandate, or essential safety protocols.
+                </p>
+              </div>
 
-              <h2 className="text-2xl font-bold text-zinc-100 mt-8 mb-4">How We Use Your Information</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>To respond to your inquiries</li>
-                <li>To provide and improve our services</li>
-                <li>To ensure security and prevent fraud</li>
-                <li>To comply with legal obligations</li>
-              </ul>
+              <div className="pt-12 border-t border-white/5">
+                <p className="text-[var(--aegis-text-muted)] font-mono text-[10px] uppercase tracking-widest mb-4">Inquiries</p>
+                <a href="mailto:hermes@aegisos.ai" className="text-[var(--aegis-text-primary)] font-display font-bold text-xl hover:text-[var(--color-accent)] transition-colors">hermes@aegisos.ai</a>
+              </div>
 
-              <h2 className="text-2xl font-bold text-zinc-100 mt-8 mb-4">Data Sharing</h2>
-              <p>
-                We do not sell your personal information. We share data only when:
-              </p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>You give explicit consent</li>
-                <li>Required by law</li>
-                <li>Necessary to protect rights and safety</li>
-              </ul>
-
-              <h2 className="text-2xl font-bold text-zinc-100 mt-8 mb-4">Your Rights</h2>
-              <p>
-                You have the right to:
-              </p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Access your personal data</li>
-                <li>Request correction or deletion</li>
-                <li>Opt out of communications</li>
-                <li>Request data portability</li>
-              </ul>
-
-              <h2 className="text-2xl font-bold text-zinc-100 mt-8 mb-4">Contact Us</h2>
-              <p>
-                For privacy-related questions, contact us at{' '}
-                <a href="mailto:g1@aegisos.ai" className="text-[var(--accent)] hover:underline">
-                  g1@aegisos.ai
-                </a>
-              </p>
             </div>
           </motion.div>
         </div>
