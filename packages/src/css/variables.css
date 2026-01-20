@@ -1,0 +1,162 @@
+/*
+ * AEGIS Theme System - CSS Custom Properties
+ * Version: 1.1.0
+ *
+ * Dark Mode: AEGIS Noir (default)
+ * Light Mode: Peachy Warmth
+ *
+ * CANONICAL SOURCE - All apps should sync from this file
+ */
+
+:root {
+  /* === Core Surfaces (Dark Mode Default) === */
+  --aegis-void: #0a0a0b;
+  --aegis-engine: #0d0d0e;
+  --aegis-charcoal: #111113;
+  --aegis-surface: #18181b;
+  --aegis-elevated: #1f1f23;
+
+  /* === Text Hierarchy === */
+  --aegis-text-primary: #fafafa;
+  --aegis-text-secondary: #a1a1aa;
+  --aegis-text-muted: #71717a;
+  --aegis-text-faded: #3f3f46;
+
+  /* === Accent Colors (AEGIS Coral) === */
+  --aegis-accent: #FF7E5F;
+  --aegis-accent-hover: #e86a4d;
+  --aegis-accent-muted: rgba(255, 126, 95, 0.15);
+  --aegis-coral: #FF7E5F;
+  --aegis-gold: #d4af37;
+  --aegis-gold-dim: #b8962e;
+
+  /* === Semantic Colors === */
+  --aegis-success: #00FF41;
+  --aegis-warning: #FFB800;
+  --aegis-error: #FF4444;
+  --aegis-info: #3B82F6;
+
+  /* === Borders & Glass === */
+  --aegis-border: rgba(255, 255, 255, 0.08);
+  --aegis-border-hover: rgba(255, 255, 255, 0.15);
+  --aegis-glass-bg: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+  --aegis-glass-border: rgba(255, 255, 255, 0.05);
+  --aegis-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.3);
+
+  /* === Animation Timing === */
+  --aegis-ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --aegis-ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+  --aegis-ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --aegis-theme-duration: 800ms;
+  --aegis-theme-ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* === Theme Toggle Specific === */
+  --aegis-toggle-icon: #93c5fd;
+  --aegis-toggle-glow: rgba(147, 197, 253, 0.2);
+  --aegis-toggle-glow-hover: rgba(147, 197, 253, 0.35);
+  --aegis-toggle-bg: var(--aegis-surface);
+  --aegis-toggle-border: var(--aegis-border);
+  --aegis-toggle-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+  /* === Elevated Surface States === */
+  --aegis-elevated-hover: #252529;
+  --aegis-interactive-bg: rgba(255, 255, 255, 0.03);
+  --aegis-interactive-hover: rgba(255, 255, 255, 0.06);
+
+  /* === Department Colors (Dark Mode) === */
+  --dept-ceo: #FF7E5F;
+  --dept-cto: #22c55e;
+  --dept-cmo: #f97316;
+  --dept-cfo: #eab308;
+  --dept-cro: #ef4444;
+  --dept-cdo: #a855f7;
+  --dept-cko: #06b6d4;
+  --dept-cao: #64748b;
+}
+
+/* === Light Mode (Peachy Warmth) === */
+:root.light,
+.light {
+  /* === Core Surfaces === */
+  --aegis-void: #faf9f7;
+  --aegis-engine: #f5f3f0;
+  --aegis-charcoal: #edebe8;
+  --aegis-surface: #ffffff;
+  --aegis-elevated: #f8f7f5;
+
+  /* === Text Hierarchy === */
+  --aegis-text-primary: #1a1a1f;
+  --aegis-text-secondary: #4a4a52;
+  --aegis-text-muted: #6b6b75;
+  --aegis-text-faded: #9e9ea8;
+
+  /* === Accent Colors (Peachy Coral) === */
+  --aegis-accent: #FF7E5F;
+  --aegis-accent-hover: #e86a4d;
+  --aegis-accent-muted: rgba(255, 126, 95, 0.12);
+  --aegis-coral: #FF7E5F;
+  --aegis-gold: #c9a030;
+  --aegis-gold-dim: #a8852a;
+
+  /* === Semantic Colors (Adjusted for light bg) === */
+  --aegis-success: #16a34a;
+  --aegis-warning: #d97706;
+  --aegis-error: #dc2626;
+  --aegis-info: #2563eb;
+
+  /* === Borders & Glass === */
+  --aegis-border: rgba(0, 0, 0, 0.08);
+  --aegis-border-hover: rgba(0, 0, 0, 0.15);
+  --aegis-glass-bg: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.6) 100%);
+  --aegis-glass-border: rgba(0, 0, 0, 0.08);
+  --aegis-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.1);
+
+  /* === Theme Toggle Specific (Light Mode) === */
+  --aegis-toggle-icon: var(--aegis-coral);
+  --aegis-toggle-glow: rgba(255, 126, 95, 0.2);
+  --aegis-toggle-glow-hover: rgba(255, 126, 95, 0.35);
+  --aegis-toggle-bg: var(--aegis-surface);
+  --aegis-toggle-border: var(--aegis-border);
+  --aegis-toggle-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  /* === Elevated Surface States (Light Mode) === */
+  --aegis-elevated-hover: #f0efec;
+  --aegis-interactive-bg: rgba(0, 0, 0, 0.02);
+  --aegis-interactive-hover: rgba(0, 0, 0, 0.04);
+
+  /* === Department Colors (Light Mode Adjusted) === */
+  --dept-ceo: #e86a4d;
+  --dept-cto: #15803d;
+  --dept-cmo: #c2410c;
+  --dept-cfo: #a16207;
+  --dept-cro: #dc2626;
+  --dept-cdo: #9333ea;
+  --dept-cko: #0891b2;
+  --dept-cao: #475569;
+}
+
+/* === OKLCH Versions for modern browsers === */
+@supports (color: oklch(0.5 0.1 0)) {
+  :root {
+    --aegis-void: oklch(0.05 0.01 280);
+    --aegis-engine: oklch(0.08 0.015 280);
+    --aegis-charcoal: oklch(0.12 0.02 280);
+    --aegis-surface: oklch(0.15 0.02 280);
+    --aegis-text-primary: oklch(0.98 0 0);
+    --aegis-accent: oklch(0.70 0.18 25);
+    --aegis-coral: oklch(0.70 0.18 25);
+    --aegis-gold: oklch(0.75 0.12 85);
+  }
+
+  :root.light,
+  .light {
+    --aegis-void: oklch(0.98 0.01 85);
+    --aegis-engine: oklch(0.96 0.015 85);
+    --aegis-charcoal: oklch(0.94 0.02 85);
+    --aegis-surface: oklch(1 0 0);
+    --aegis-text-primary: oklch(0.15 0.02 280);
+    --aegis-accent: oklch(0.70 0.20 30);
+    --aegis-coral: oklch(0.70 0.20 30);
+    --aegis-gold: oklch(0.65 0.15 70);
+  }
+}

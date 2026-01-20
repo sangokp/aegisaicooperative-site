@@ -1,0 +1,89 @@
+/*
+ * AEGIS Theme System - Transition Styles
+ * Smooth color transitions when switching themes
+ */
+
+/* === Theme Transition Properties === */
+:root {
+  --theme-transition:
+    background-color var(--aegis-theme-duration) var(--aegis-theme-ease),
+    color var(--aegis-theme-duration) var(--aegis-theme-ease),
+    border-color var(--aegis-theme-duration) var(--aegis-theme-ease),
+    fill var(--aegis-theme-duration) var(--aegis-theme-ease),
+    stroke var(--aegis-theme-duration) var(--aegis-theme-ease),
+    box-shadow var(--aegis-theme-duration) var(--aegis-theme-ease),
+    opacity var(--aegis-theme-duration) var(--aegis-theme-ease);
+}
+
+/* === Elements that transition with theme === */
+.theme-transition,
+body,
+.glass-panel,
+.glass-card,
+.glass-container,
+.terminal-card,
+.card,
+header,
+nav,
+footer,
+main,
+section,
+article,
+aside {
+  transition: var(--theme-transition);
+}
+
+/* === Disable transitions during initial page load === */
+.no-theme-transition,
+.no-theme-transition * {
+  transition: none !important;
+}
+
+/* === Reduced motion preference === */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --aegis-theme-duration: 0.01ms;
+  }
+
+  .theme-transition,
+  .theme-transition * {
+    transition-duration: 0.01ms !important;
+  }
+
+  /* Hide the celestial animation overlay */
+  .aegis-celestial-transition {
+    display: none !important;
+  }
+}
+
+/* === Transition utility classes === */
+.transition-theme-fast {
+  transition-duration: calc(var(--aegis-theme-duration) * 0.5);
+}
+
+.transition-theme-slow {
+  transition-duration: calc(var(--aegis-theme-duration) * 1.5);
+}
+
+/* === Icon transition for toggle === */
+.theme-icon-enter {
+  opacity: 0;
+  transform: translateY(-10px) rotate(-90deg);
+}
+
+.theme-icon-enter-active {
+  opacity: 1;
+  transform: translateY(0) rotate(0);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+.theme-icon-exit {
+  opacity: 1;
+  transform: translateY(0) rotate(0);
+}
+
+.theme-icon-exit-active {
+  opacity: 0;
+  transform: translateY(10px) rotate(90deg);
+  transition: opacity 300ms ease-in, transform 300ms ease-in;
+}

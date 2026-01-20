@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ThemeToggle } from '@aegis/theme';
 
 const navLinks = [
   { name: 'Philosophy', path: '/about' },
@@ -89,9 +88,6 @@ export default function Navbar() {
 
           {/* Action Area */}
           <div className="flex items-center gap-3 md:gap-5 shrink-0">
-            {/* Theme Toggle */}
-            <ThemeToggle size="sm" variant="ghost" />
-
             <Link to="/contact" className="hidden sm:flex items-center gap-2 text-[var(--aegis-text-primary)] font-display font-bold text-[10px] md:text-xs uppercase tracking-widest hover:text-[var(--aegis-accent)] transition-colors whitespace-nowrap">
               Initialize <Globe className="w-3.5 h-3.5" />
             </Link>
