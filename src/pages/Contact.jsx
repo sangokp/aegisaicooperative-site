@@ -13,12 +13,45 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  const [submitError, setSubmitError] = useState(null);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    setIsSubmitted(true);
-    setIsSubmitting(false);
+    setSubmitError(null);
+
+    try {
+      // Submit to AEGIS contact webhook
+      const response = await fetch('https://n8n.srv1170368.hstgr.cloud/webhook/aegis-contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formState,
+          source: 'aegisaicooperative.com',
+          timestamp: new Date().toISOString(),
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Submission failed');
+      }
+
+      setIsSubmitted(true);
+      setFormState({ name: '', email: '', company: '', department: 'general', message: '' });
+    } catch (error) {
+      // Fallback: open email client with pre-filled data
+      const subject = encodeURIComponent(`[AEGIS Contact] ${formState.department} inquiry from ${formState.name}`);
+      const body = encodeURIComponent(
+        `Name: ${formState.name}\nEmail: ${formState.email}\nCompany: ${formState.company}\nDepartment: ${formState.department}\n\nMessage:\n${formState.message}`
+      );
+
+      setSubmitError({
+        message: 'Network issue. Click below to send via email instead.',
+        fallbackUrl: `mailto:hermes@aegisos.ai?subject=${subject}&body=${body}`,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -212,6 +245,18 @@ export default function Contact() {
                         className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-[var(--aegis-text-muted)] outline-none focus:border-[var(--color-accent)]/50 focus:bg-white/[0.08] transition-all resize-none"
                       />
                     </div>
+
+                    {submitError && (
+                      <div className="p-4 rounded-2xl bg-red-500/10 border border-red-500/30 text-center">
+                        <p className="text-red-400 text-sm mb-2">{submitError.message}</p>
+                        <a
+                          href={submitError.fallbackUrl}
+                          className="text-[var(--color-accent)] underline text-sm"
+                        >
+                          Open email client
+                        </a>
+                      </div>
+                    )}
 
                     <button
                       type="submit"
