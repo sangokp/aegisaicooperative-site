@@ -223,12 +223,15 @@ export default function Contact() {
                         >
                           <option value="general" className="bg-[var(--color-charcoal)]">General Inquiry</option>
                           <option value="executive" className="bg-[var(--color-charcoal)]">Executive (CEO/Thea)</option>
-                          <option value="creative" className="bg-[var(--color-charcoal)]">Creative (CDO/Apollo)</option>
                           <option value="technical" className="bg-[var(--color-charcoal)]">Technical (CTO/Forge)</option>
+                          <option value="creative" className="bg-[var(--color-charcoal)]">Creative (CDO/Apollo)</option>
                           <option value="operations" className="bg-[var(--color-charcoal)]">Operations (COO/Atlas)</option>
-                          <option value="financial" className="bg-[var(--color-charcoal)]">Financial (CFO/Vulcan)</option>
+                          <option value="financial" className="bg-[var(--color-charcoal)]">Financial (CFO/Atlas)</option>
+                          <option value="security" className="bg-[var(--color-charcoal)]">Security (CRO/Sentinel)</option>
                           <option value="knowledge" className="bg-[var(--color-charcoal)]">Knowledge (CKO/Mnemosyne)</option>
+                          <option value="learning" className="bg-[var(--color-charcoal)]">Learning (CLO/Athena)</option>
                           <option value="marketing" className="bg-[var(--color-charcoal)]">Marketing (CMO/Hermes)</option>
+                          <option value="automation" className="bg-[var(--color-charcoal)]">Automation (CAO/Argus)</option>
                         </select>
                       </div>
                     </div>
