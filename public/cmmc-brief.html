@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AEGIS CMMC Compliance Tool - One Page Brief</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: #1a1a1a;
+    background: #fff;
+    line-height: 1.5;
+    max-width: 8.5in;
+    margin: 0 auto;
+    padding: 0.5in 0.6in;
+    font-size: 10pt;
+  }
+
+  @media print {
+    body { padding: 0; font-size: 9.5pt; }
+    .no-print { display: none; }
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+
+  header h1 {
+    font-size: 16pt;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  header .contact {
+    text-align: right;
+    font-size: 8.5pt;
+    color: #555;
+  }
+
+  .subtitle {
+    font-size: 10pt;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 11pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #c45d3a;
+    margin-bottom: 8px;
+    margin-top: 16px;
+  }
+
+  h2:first-of-type { margin-top: 0; }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .stat {
+    border-left: 2px solid #c45d3a;
+    padding-left: 8px;
+  }
+
+  .stat .number {
+    font-size: 16pt;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .stat .label {
+    font-size: 7.5pt;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+    font-size: 9pt;
+  }
+
+  th {
+    background: #f5f3ef;
+    text-align: left;
+    padding: 5px 8px;
+    font-weight: 600;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid #ddd;
+  }
+
+  td {
+    padding: 4px 8px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+  }
+
+  ul {
+    padding-left: 16px;
+    margin-bottom: 8px;
+  }
+
+  li {
+    margin-bottom: 3px;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+    margin-bottom: 12px;
+  }
+
+  .feature {
+    border-left: 2px solid #6b7c6b;
+    padding-left: 8px;
+    font-size: 9pt;
+  }
+
+  .feature strong {
+    display: block;
+    font-size: 9.5pt;
+  }
+
+  .feature span {
+    color: #555;
+    font-size: 8.5pt;
+  }
+
+  .cta {
+    background: #1a1a1a;
+    color: #faf8f5;
+    padding: 12px 16px;
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cta strong {
+    font-size: 11pt;
+  }
+
+  .cta .details {
+    text-align: right;
+    font-size: 8.5pt;
+    color: #c4c4c4;
+  }
+
+  .divider {
+    border-top: 1px solid #ddd;
+    margin: 12px 0;
+  }
+
+  .footer-note {
+    font-size: 7.5pt;
+    color: #999;
+    text-align: center;
+    margin-top: 12px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>CMMC Compliance Automation</h1>
+    <div class="subtitle">For defense manufacturers who need Level 2 by November 2026</div>
+  </div>
+  <div class="contact">
+    AEGIS AI Cooperative<br>
+    Mesa, Arizona<br>
+    g1@aegisos.ai<br>
+    aegisaicooperative.com/cmmc
+  </div>
+</header>
+
+<h2>The Mandate</h2>
+<div class="stat-row">
+  <div class="stat">
+    <div class="number">220K+</div>
+    <div class="label">Defense contractors affected</div>
+  </div>
+  <div class="stat">
+    <div class="number">68%</div>
+    <div class="label">Are small businesses</div>
+  </div>
+  <div class="stat">
+    <div class="number">~270</div>
+    <div class="label">Certified nationally</div>
+  </div>
+  <div class="stat">
+    <div class="number">Nov 2026</div>
+    <div class="label">Level 2 deadline</div>
+  </div>
+</div>
+
+<div class="two-col">
+<div>
+<h2>The Gap</h2>
+<table>
+  <tr><th>Tier</th><th>Price</th><th>Problem</th></tr>
+  <tr><td>DIY / Templates</td><td>$1,700 to $8K</td><td>Level 1 only, no automation</td></tr>
+  <tr><td>Mid-market tools</td><td>$12K to $50K/yr</td><td>IT-focused, ignore OT/SCADA</td></tr>
+  <tr><td>Enterprise (Deloitte, etc.)</td><td>$50K to $200K+</td><td>Overkill for SMBs</td></tr>
+  <tr><td style="font-weight:600;color:#c45d3a">AEGIS (our target)</td><td style="font-weight:600">$18K/yr</td><td style="font-weight:600">All-in-one, OT-aware, for SMBs</td></tr>
+</table>
+</div>
+
+<div>
+<h2>What We Build</h2>
+<div class="features">
+  <div class="feature">
+    <strong>Gap Analysis</strong>
+    <span>AI maps docs to 110 NIST SP 800-171 controls. Identifies gaps with remediation steps.</span>
+  </div>
+  <div class="feature">
+    <strong>SSP Generator</strong>
+    <span>Auto-generates System Security Plans from assessment data. Audit-ready output.</span>
+  </div>
+  <div class="feature">
+    <strong>Continuous Monitoring</strong>
+    <span>Dashboard tracks control status. Evidence collection. Quarterly reporting.</span>
+  </div>
+  <div class="feature">
+    <strong>OT-Aware</strong>
+    <span>Built for shop floors. Understands SCADA, PLC, HMI, air-gapped networks, CUI flow.</span>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<h2>For MEP Centers</h2>
+<p style="margin-bottom:10px">
+  AEGIS is not a competing consultancy. We are the technology layer your advisors use to scale.
+  Your team keeps the client relationship. Our tool runs the analysis.
+</p>
+
+<table>
+  <tr><th style="width:30%">Your Challenge</th><th>How AEGIS Helps</th></tr>
+  <tr>
+    <td>9 staff serving 4,600+ manufacturers</td>
+    <td>Automated gap analysis lets each advisor handle 3 to 5x more CMMC assessments</td>
+  </tr>
+  <tr>
+    <td>Manual 110-control assessment process</td>
+    <td>AI-powered document analysis maps policies to controls in minutes, not weeks</td>
+  </tr>
+  <tr>
+    <td>No in-house CMMC credentials</td>
+    <td>Tool encodes NIST SP 800-171 requirements. Advisors guide, tool validates.</td>
+  </tr>
+  <tr>
+    <td>1,000+ AZ manufacturers need Level 2</td>
+    <td>Revenue share partnership: AEGIS tool creates new billable service engagements</td>
+  </tr>
+</table>
+
+<div class="divider"></div>
+
+<h2>Engagement Model</h2>
+<table>
+  <tr><th>Phase</th><th>What Happens</th><th>Cost to MEP</th></tr>
+  <tr>
+    <td style="font-weight:500">1. Pilot</td>
+    <td>Run tool alongside your advisor on one real CMMC assessment. Compare results.</td>
+    <td style="font-weight:600">Free</td>
+  </tr>
+  <tr>
+    <td style="font-weight:500">2. Validate</td>
+    <td>Refine based on pilot feedback. Train advisors on tool workflow.</td>
+    <td style="font-weight:600">Free</td>
+  </tr>
+  <tr>
+    <td style="font-weight:500">3. Deploy</td>
+    <td>Production rollout. MEP offers CMMC assessments using AEGIS as technology backbone.</td>
+    <td style="font-weight:600">Revenue share</td>
+  </tr>
+</table>
+
+<div class="cta">
+  <div>
+    <strong>Pilot it on your next CMMC engagement. Free.</strong>
+  </div>
+  <div class="details">
+    Ji Won Jeong, CEO<br>
+    g1@aegisos.ai
+  </div>
+</div>
+
+<div class="footer-note">
+  AEGIS AI Cooperative / Mesa, AZ / aegisaicooperative.com/cmmc
+</div>
+
+</body>
+</html>

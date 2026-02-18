@@ -9,14 +9,19 @@ import TeamMember from './pages/TeamMember';
 import Contact from './pages/Contact';
 import Partners from './pages/Partners';
 import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
+import Arizona from './pages/Arizona';
+import OcaDemo from './pages/OcaDemo';
+import OcaPhoenixDemo from './pages/OcaPhoenixDemo';
+import Cmmc from './pages/Cmmc';
 import './index.css';
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col bg-[var(--aegis-void)] text-[var(--aegis-text-primary)] dark">
+      <div className="min-h-screen flex flex-col bg-[var(--aegis-void)] text-[var(--aegis-text-primary)]">
         <Navbar />
         <main className="flex-grow">
           <Routes>
@@ -28,8 +33,13 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/partners" element={<Partners />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/arizona" element={<Arizona />} />
+            <Route path="/oca-demo" element={<OcaDemo />} />
+            <Route path="/oca-phoenix" element={<OcaPhoenixDemo />} />
+            <Route path="/cmmc" element={<Cmmc />} />
           </Routes>
         </main>
         <Footer />

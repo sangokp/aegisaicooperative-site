@@ -1,139 +1,161 @@
-/* 1. Typography - High-End Editorial Selection */
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+/* 1. Typography - Editorial Selection */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Source+Sans+3:wght@300;400;500;600&display=swap');
 
 @import "tailwindcss";
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   AEGIS DESIGN SYSTEM - "AEGIS NOIR" (v2.0 - 8-Figure Polish)
-   Now with Light Mode: "AEGIS DAWN" (Peachy Warmth)
+   AEGIS DESIGN SYSTEM - "AEGIS EDITORIAL" (v3.0)
+   Magazine-inspired warmth with professional elegance
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* Theme CSS Variables */
+/* Theme CSS Variables - Editorial Palette */
 :root {
-  /* Dark Mode (Default) */
-  --aegis-void: #0a0a0b;
-  --aegis-engine: #0d0d0e;
-  --aegis-charcoal: #111113;
-  --aegis-surface: #18181b;
-  --aegis-text-primary: #fafafa;
-  --aegis-text-secondary: #a1a1aa;
-  --aegis-text-muted: #71717a;
-  --aegis-accent: #3b82f6;
-  --aegis-accent-hover: #2563eb;
-  --aegis-accent-muted: rgba(59, 130, 246, 0.15);
-  --aegis-gold: #d4af37;
-  --aegis-border: rgba(255, 255, 255, 0.08);
-  --aegis-border-hover: rgba(255, 255, 255, 0.15);
-  --aegis-glass-bg: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
-  --aegis-glass-border: rgba(255, 255, 255, 0.05);
-  --aegis-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.3);
-  --aegis-theme-duration: 800ms;
+  /* Editorial Light Mode (Default) */
+  --aegis-void: #faf8f5;
+  --aegis-engine: #f5f3ef;
+  --aegis-charcoal: #edebe6;
+  --aegis-surface: #ffffff;
+  --aegis-text-primary: #1a1a1a;
+  --aegis-text-secondary: #555555;
+  --aegis-text-muted: #888888;
+  --aegis-accent: #8b6f47;
+  --aegis-accent-hover: #a84d2f;
+  --aegis-accent-muted: rgba(196, 93, 58, 0.12);
+  --aegis-gold: #b8955a;
+  --aegis-sage: #6b7c6b;
+  --aegis-rust: #c45d3a;
+  --aegis-border: rgba(0, 0, 0, 0.1);
+  --aegis-border-hover: rgba(0, 0, 0, 0.2);
+  --aegis-glass-bg: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%);
+  --aegis-glass-border: rgba(0, 0, 0, 0.08);
+  --aegis-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.08);
+  --aegis-theme-duration: 400ms;
   --aegis-theme-ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Light Mode (Peachy Warmth) */
-:root.light,
-.light {
-  --aegis-void: #faf9f7;
-  --aegis-engine: #f5f3f0;
-  --aegis-charcoal: #edebe8;
-  --aegis-surface: #ffffff;
-  --aegis-text-primary: #1a1a1f;
-  --aegis-text-secondary: #4a4a52;
-  --aegis-text-muted: #6b6b75;
-  --aegis-accent: #FF7E5F;
-  --aegis-accent-hover: #e86a4d;
-  --aegis-accent-muted: rgba(255, 126, 95, 0.12);
-  --aegis-gold: #c9a030;
-  --aegis-border: rgba(0, 0, 0, 0.08);
-  --aegis-border-hover: rgba(0, 0, 0, 0.15);
-  --aegis-glass-bg: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.6) 100%);
-  --aegis-glass-border: rgba(0, 0, 0, 0.08);
-  --aegis-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.1);
+/* Dark Mode Override */
+:root.dark,
+.dark {
+  --aegis-void: #1a1a1a;
+  --aegis-engine: #222222;
+  --aegis-charcoal: #2a2a2a;
+  --aegis-surface: #1a1a1a;
+  --aegis-text-primary: #faf8f5;
+  --aegis-text-secondary: #c4c4c4;
+  --aegis-text-muted: #888888;
+  --aegis-accent: #e07a57;
+  --aegis-accent-hover: #c45d3a;
+  --aegis-accent-muted: rgba(224, 122, 87, 0.15);
+  --aegis-gold: #d4af6a;
+  --aegis-sage: #8a9f8a;
+  --aegis-rust: #e07a57;
+  --aegis-border: rgba(255, 255, 255, 0.1);
+  --aegis-border-hover: rgba(255, 255, 255, 0.2);
+  --aegis-glass-bg: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+  --aegis-glass-border: rgba(255, 255, 255, 0.05);
+  --aegis-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.3);
 }
 
 @theme inline {
   --font-display: 'Syne', sans-serif;
-  --font-body: 'Space Grotesk', sans-serif;
-  --font-ui: 'Inter', sans-serif;
+  --font-body: 'Source Sans 3', sans-serif;
+  --font-ui: 'Source Sans 3', sans-serif;
 
-  /* 2. Color Palette - Now using CSS variables for theme support */
+  /* 2. Color Palette - Editorial warmth */
   --color-void: var(--aegis-void);
   --color-charcoal: var(--aegis-charcoal);
-  --color-glass: oklch(0.18 0.03 280 / 0.4);
+  --color-glass: rgba(255, 255, 255, 0.8);
 
   --color-accent: var(--aegis-accent);
   --color-accent-dim: var(--aegis-accent-hover);
   --color-gold: var(--aegis-gold);
+  --color-sage: var(--aegis-sage);
+  --color-rust: var(--aegis-rust);
 
   --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
   --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
 }
 
 @layer base {
-  /* Global Reset & Texture */
+  /* Global Reset - Editorial Clean */
   body {
     background-color: var(--aegis-void);
     color: var(--aegis-text-primary);
-    font-family: var(--font-ui);
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
     transition: background-color var(--aegis-theme-duration) var(--aegis-theme-ease),
                 color var(--aegis-theme-duration) var(--aegis-theme-ease);
   }
 
-  /* Noise Texture Overlay */
-  body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: overlay;
+  /* Selection styling */
+  ::selection {
+    background: var(--aegis-rust);
+    color: var(--aegis-void);
   }
 
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  /* Small caps utility for Editorial headers */
+  .small-caps {
+    font-variant: small-caps;
+    letter-spacing: 0.15em;
+    font-weight: 500;
   }
 }
 
 @layer utilities {
-  /* 3. Advanced Glassmorphism */
+  /* 3. Editorial Card Styles */
   .glass-panel {
-    background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
-    backdrop-filter: blur(24px);
-    border: 1px solid rgba(255,255,255,0.05);
-    box-shadow: 
-      0 4px 24px -1px rgba(0,0,0,0.3),
-      inset 0 1px 0 0 rgba(255,255,255,0.05);
+    background: var(--aegis-surface);
+    border: 1px solid var(--aegis-border);
+    box-shadow: var(--aegis-shadow);
   }
 
   .glass-panel-hover {
-    transition: all 0.5s var(--ease-fluid);
+    transition: all 0.4s var(--ease-fluid);
   }
-  
+
   .glass-panel-hover:hover {
-    background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
-    border-color: rgba(255,255,255,0.12);
-    transform: translateY(-6px) scale(1.01);
-    box-shadow: 
-      0 30px 60px -12px rgba(0,0,0,0.5),
-      inset 0 1px 0 0 rgba(255,255,255,0.1);
+    border-color: var(--aegis-border-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px -8px rgba(0,0,0,0.12);
   }
 
-  /* 4. Text Gradients & Effects */
-  .text-glow {
-    text-shadow: 0 0 30px rgba(96, 165, 250, 0.4);
+  /* Editorial accent borders */
+  .accent-border-rust {
+    border-left: 3px solid var(--aegis-rust);
+    padding-left: 1.5rem;
   }
 
-  .text-gradient-white {
-    background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0.4) 100%);
-    -webkit-background-clip: text;
-    color: transparent;
+  .accent-border-sage {
+    border-left: 3px solid var(--aegis-sage);
+    padding-left: 1.5rem;
+  }
+
+  .accent-border-gold {
+    border-left: 3px solid var(--aegis-gold);
+    padding-left: 1.5rem;
+  }
+
+  /* 4. Text Effects */
+  .text-rust {
+    color: var(--aegis-rust);
+  }
+
+  .text-sage {
+    color: var(--aegis-sage);
+  }
+
+  .text-gold {
+    color: var(--aegis-gold);
   }
 
   /* 5. Animations */
@@ -151,24 +173,13 @@
     animation: float-slow 10s ease-in-out infinite;
   }
 
-  /* 7. High-End Kinetic Elements */
+  /* 7. Subtle Kinetic Elements */
   .spotlight {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(
-      800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgba(96, 165, 250, 0.06),
-      transparent 40%
-    );
-    pointer-events: none;
-    z-index: 1;
+    display: none; /* Disabled for Editorial clean aesthetic */
   }
 
   .text-reveal {
-    background: linear-gradient(to right, white 0%, white 50%, rgba(255,255,255,0.1) 100%);
+    background: linear-gradient(to right, var(--aegis-text-primary) 0%, var(--aegis-text-primary) 50%, var(--aegis-text-muted) 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     color: transparent;
@@ -177,6 +188,20 @@
 
   @keyframes reveal {
     to { background-position: -100% center; }
+  }
+
+  /* Editorial divider */
+  .editorial-divider {
+    border: none;
+    border-top: 1px solid var(--aegis-border);
+    margin: 3rem 0;
+  }
+
+  .editorial-divider-accent {
+    width: 48px;
+    height: 1px;
+    background: var(--aegis-rust);
+    margin: 2rem 0;
   }
 
   /* 6. Utility Classes */
@@ -189,33 +214,57 @@
   }
 
   .btn-premium {
-    @apply relative px-10 py-4 font-display font-bold text-sm uppercase tracking-widest rounded-full transition-all duration-500 overflow-hidden;
-    background: white;
-    color: black;
+    @apply relative px-8 py-4 font-body font-semibold text-sm tracking-wider transition-all duration-400 overflow-hidden;
+    background: var(--aegis-text-primary);
+    color: var(--aegis-void);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
   }
 
   .btn-premium:hover {
-    @apply scale-105 shadow-2xl;
-    box-shadow: 0 0 40px rgba(255,255,255,0.2);
+    background: var(--aegis-rust);
+    color: var(--aegis-void);
+    transform: translateY(-2px);
   }
 
   .btn-outline-premium {
-    @apply relative px-10 py-4 font-display font-bold text-sm uppercase tracking-widest rounded-full transition-all duration-500 border border-white/20 hover:border-white/40 hover:bg-white/5;
+    @apply relative px-8 py-4 font-body font-semibold text-sm tracking-wider transition-all duration-400;
+    border: 1px solid var(--aegis-border-hover);
+    color: var(--aegis-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .btn-outline-premium:hover {
+    border-color: var(--aegis-rust);
+    color: var(--aegis-rust);
+    background: transparent;
+  }
+
+  /* Editorial link style */
+  .editorial-link {
+    color: var(--aegis-rust);
+    text-decoration: none;
+    border-bottom: 1px solid var(--aegis-rust);
+    transition: all 0.3s ease;
+  }
+
+  .editorial-link:hover {
+    color: var(--aegis-accent-hover);
+    border-color: var(--aegis-accent-hover);
   }
 
   /* ═══════════════════════════════════════════════════════════════════════════
      PREMIUM MICRO-INTERACTIONS (v2.1)
      ═══════════════════════════════════════════════════════════════════════════ */
 
-  /* Hover glow effect */
+  /* Hover glow effect - Editorial subtle */
   .hover-glow {
     transition: box-shadow 0.4s var(--ease-fluid);
   }
 
   .hover-glow:hover {
-    box-shadow:
-      0 0 20px rgba(59, 130, 246, 0.2),
-      0 0 40px rgba(59, 130, 246, 0.1);
+    box-shadow: 0 8px 30px -8px rgba(196, 93, 58, 0.15);
   }
 
   /* Skeleton shimmer animation */
@@ -300,12 +349,14 @@
   /* Premium input focus states */
   .premium-input {
     transition: all 0.3s var(--ease-fluid);
+    border: 1px solid var(--aegis-border);
+    background: var(--aegis-surface);
   }
 
   .premium-input:focus {
-    box-shadow:
-      0 0 0 2px var(--aegis-accent-muted),
-      0 0 20px rgba(59, 130, 246, 0.15);
+    border-color: var(--aegis-rust);
+    box-shadow: 0 0 0 3px var(--aegis-accent-muted);
+    outline: none;
   }
 
   /* Premium scrollbar */
@@ -332,7 +383,7 @@
     background: var(--aegis-accent);
   }
 
-  /* Gradient border effect */
+  /* Gradient border effect - Editorial warmth */
   .gradient-border {
     position: relative;
   }
@@ -343,7 +394,7 @@
     inset: 0;
     padding: 1px;
     border-radius: inherit;
-    background: linear-gradient(135deg, var(--aegis-accent), transparent, var(--aegis-accent));
+    background: linear-gradient(135deg, var(--aegis-rust), var(--aegis-gold), var(--aegis-sage));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="AEGIS Kiosk">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#020203">
+<meta name="msapplication-navbutton-color" content="#020203">
+<link rel="apple-touch-icon" href="/Aegis_logo_white.png">
+<link rel="icon" type="image/svg+xml" href="/aegis-logo.svg">
+<title>AEGIS // Demo Launcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --bg: #020203;
+    --accent: #0A75FF;
+    --text: #FAFAFA;
+    --muted: #A1A1AA;
+    --card-bg: #0A0A0C;
+    --border: #1A1A1F;
+    --border-hover: #0A75FF;
+    --grid-line: rgba(10, 117, 255, 0.06);
+  }
+
+  html, body {
+    height: 100%;
+    overflow: hidden;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    user-select: none;
+  }
+
+  /* Subtle grid background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Scanline overlay */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .kiosk {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    height: 100dvh;
+    padding: 32px 40px;
+  }
+
+  /* --- HEADER --- */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+    flex-shrink: 0;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .logo {
+    height: 40px;
+    width: auto;
+    display: block;
+  }
+
+  .logo-fallback {
+    display: none;
+    height: 40px;
+    width: auto;
+  }
+
+  .header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .header-title {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  .header-sub {
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+  }
+
+  .status-dot {
+    width: 6px;
+    height: 6px;
+    background: #22C55E;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .btn-fullscreen {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+    min-height: 44px;
+  }
+
+  .btn-fullscreen:hover,
+  .btn-fullscreen:active {
+    border-color: var(--accent);
+    color: var(--text);
+  }
+
+  .btn-fullscreen svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+  }
+
+  /* --- GRID --- */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    flex: 1;
+    align-content: start;
+  }
+
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 28px 28px 24px;
+    min-height: 160px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, background 0.15s;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .card:hover,
+  .card:active {
+    border-color: var(--border-hover);
+    background: #0C0C10;
+  }
+
+  .card:hover::before,
+  .card:active::before {
+    opacity: 1;
+  }
+
+  .card-top {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .card-index {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+
+  .card-name {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .card-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+  }
+
+  .card-badge {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 4px 10px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(10, 117, 255, 0.25);
+    background: rgba(10, 117, 255, 0.06);
+    width: fit-content;
+  }
+
+  .card-arrow {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    width: 20px;
+    height: 20px;
+    stroke: var(--muted);
+    fill: none;
+    stroke-width: 2;
+    opacity: 0.4;
+    transition: opacity 0.2s, stroke 0.2s, transform 0.2s;
+  }
+
+  .card:hover .card-arrow,
+  .card:active .card-arrow {
+    opacity: 1;
+    stroke: var(--accent);
+    transform: translate(2px, -2px);
+  }
+
+  /* --- FOOTER --- */
+  .footer {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 28px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-text {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .footer-time {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* --- RESPONSIVE --- */
+  @media (max-width: 600px) {
+    .kiosk {
+      padding: 20px;
+    }
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .card {
+      min-height: 120px;
+      padding: 20px;
+    }
+    .card-name {
+      font-size: 18px;
+    }
+    .header {
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .status-indicator {
+      display: none;
+    }
+  }
+
+  /* Landscape tablet optimization (Galaxy Tab S10 Ultra: 2960x1848) */
+  @media (min-width: 1200px) and (min-height: 800px) {
+    .kiosk {
+      padding: 48px 56px;
+    }
+    .grid {
+      gap: 24px;
+    }
+    .card {
+      min-height: 180px;
+      padding: 32px 32px 28px;
+    }
+    .card-name {
+      font-size: 26px;
+    }
+    .card-desc {
+      font-size: 14px;
+    }
+  }
+
+  /* 3-column if there is enough width (landscape ultra-wide) */
+  @media (min-width: 1600px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
+</head>
+<body>
+<div class="kiosk">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-left">
+      <picture>
+        <source srcset="/aegis-logo.svg" type="image/svg+xml">
+        <img src="/Aegis_logo_white.png" alt="AEGIS" class="logo">
+      </picture>
+      <div class="header-text">
+        <div class="header-title">Demo Launcher</div>
+        <div class="header-sub">Sales Engineering Terminal</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="status-indicator">
+        <div class="status-dot"></div>
+        <span>SYSTEMS ONLINE</span>
+      </div>
+      <button class="btn-fullscreen" id="btnFullscreen" title="Enter fullscreen mode">
+        <svg viewBox="0 0 24 24" stroke-linecap="square" stroke-linejoin="miter">
+          <path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/>
+        </svg>
+        <span>FULLSCREEN</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- GRID -->
+  <div class="grid">
+
+    <a class="card" href="https://aegisos.ai/dashboard?demo=investor" target="_blank" rel="noopener">
+      <div class="card-top">
+        <div class="card-index">SYS-01</div>
+        <div class="card-name">AEGIS Dashboard</div>
+      </div>
+      <div class="card-desc">Live AI governance dashboard - investor demo configuration</div>
+      <div class="card-badge">Live System</div>
+      <svg class="card-arrow" viewBox="0 0 24 24" stroke-linecap="square" stroke-linejoin="miter">
+        <path d="M7 17L17 7M17 7H7M17 7v10"/>
+      </svg>
+    </a>
+
+    <a class="card" href="https://aegisaicooperative.com/oca-demo" target="_blank" rel="noopener">
+      <div class="card-top">
+        <div class="card-index">SYS-02</div>
+        <div class="card-name">Industrial Demo</div>
+      </div>
+      <div class="card-desc">Community partnership model for industrial AI deployment</div>
+      <svg class="card-arrow" viewBox="0 0 24 24" stroke-linecap="square" stroke-linejoin="miter">
+        <path d="M7 17L17 7M17 7H7M17 7v10"/>
+      </svg>
+    </a>
+
+    <a class="card" href="https://aegisaicooperative.com/dark-factory-demo.html" target="_blank" rel="noopener">
+      <div class="card-top">
+        <div class="card-index">SYS-03</div>
+        <div class="card-name">Dark Factory</div>
+      </div>
+      <div class="card-desc">Autonomous manufacturing AI - lights-out production simulation</div>
+      <div class="card-badge">Access: INTERX-MFG-2026</div>
+      <svg class="card-arrow" viewBox="0 0 24 24" stroke-linecap="square" stroke-linejoin="miter">
+        <path d="M7 17L17 7M17 7H7M17 7v10"/>
+      </svg>
+    </a>
+
+    <a class="card" href="https://aegisaicooperative.com/translation-kiosk.html" target="_blank" rel="noopener">
+      <div class="card-top">
+        <div class="card-index">SYS-04</div>
+        <div class="card-name">Translation Kiosk</div>
+      </div>
+      <div class="card-desc">Real-time multilingual translation interface</div>
+      <svg class="card-arrow" viewBox="0 0 24 24" stroke-linecap="square" stroke-linejoin="miter">
+        <path d="M7 17L17 7M17 7H7M17 7v10"/>
+      </svg>
+    </a>
+
+    <a class="card" href="https://aegisaicooperative.com/portrait-studio.html" target="_blank" rel="noopener">
+      <div class="card-top">
+        <div class="card-index">SYS-05</div>
+        <div class="card-name">Portrait Studio</div>
+      </div>
+      <div class="card-desc">AI-driven portrait generation and styling engine</div>
+      <svg class="card-arrow" viewBox="0 0 24 24" stroke-linecap="square" stroke-linejoin="miter">
+        <path d="M7 17L17 7M17 7H7M17 7v10"/>
+      </svg>
+    </a>
+
+    <a class="card" href="https://aegisaicooperative.com" target="_blank" rel="noopener">
+      <div class="card-top">
+        <div class="card-index">SYS-06</div>
+        <div class="card-name">Company Site</div>
+      </div>
+      <div class="card-desc">AEGIS AI Cooperative - main public website</div>
+      <svg class="card-arrow" viewBox="0 0 24 24" stroke-linecap="square" stroke-linejoin="miter">
+        <path d="M7 17L17 7M17 7H7M17 7v10"/>
+      </svg>
+    </a>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-text">AEGIS AI Cooperative</div>
+    <div class="footer-time" id="clock"></div>
+  </footer>
+
+</div>
+
+<script>
+(function() {
+  // Fullscreen toggle
+  var btn = document.getElementById('btnFullscreen');
+  var label = btn.querySelector('span');
+
+  function toggleFullscreen() {
+    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+      var el = document.documentElement;
+      if (el.requestFullscreen) el.requestFullscreen();
+      else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+    } else {
+      if (document.exitFullscreen) document.exitFullscreen();
+      else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+    }
+  }
+
+  function updateLabel() {
+    var isFs = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    label.textContent = isFs ? 'EXIT' : 'FULLSCREEN';
+  }
+
+  btn.addEventListener('click', toggleFullscreen);
+  document.addEventListener('fullscreenchange', updateLabel);
+  document.addEventListener('webkitfullscreenchange', updateLabel);
+
+  // Clock
+  var clockEl = document.getElementById('clock');
+  function tick() {
+    var now = new Date();
+    var h = String(now.getHours()).padStart(2, '0');
+    var m = String(now.getMinutes()).padStart(2, '0');
+    var s = String(now.getSeconds()).padStart(2, '0');
+    var y = now.getFullYear();
+    var mo = String(now.getMonth() + 1).padStart(2, '0');
+    var d = String(now.getDate()).padStart(2, '0');
+    clockEl.textContent = y + '-' + mo + '-' + d + '  ' + h + ':' + m + ':' + s;
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  // Prevent pull-to-refresh and overscroll on tablet
+  document.addEventListener('touchmove', function(e) {
+    if (e.target.closest('.grid')) return;
+    e.preventDefault();
+  }, { passive: false });
+
+  // Wake lock to prevent screen dimming during demos
+  async function requestWakeLock() {
+    try {
+      if ('wakeLock' in navigator) {
+        await navigator.wakeLock.request('screen');
+      }
+    } catch (e) {
+      // silently fail if not supported
+    }
+  }
+  requestWakeLock();
+  document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState === 'visible') requestWakeLock();
+  });
+})();
+</script>
+</body>
+</html>
