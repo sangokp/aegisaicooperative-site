@@ -1,7 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
-
 const variants = {
   primary: 'bg-[var(--aegis-accent)] text-white hover:shadow-[0_0_30px_rgba(59,130,246,0.4)]',
   secondary: 'bg-white/5 text-white border border-white/10 hover:bg-white/10 hover:border-[var(--aegis-accent)]/30',
