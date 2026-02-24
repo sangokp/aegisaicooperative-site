@@ -16,6 +16,7 @@ import Arizona from './pages/Arizona';
 import OcaDemo from './pages/OcaDemo';
 import OcaPhoenixDemo from './pages/OcaPhoenixDemo';
 import Cmmc from './pages/Cmmc';
+import CmmcAssess from './pages/CmmcAssess';
 import './index.css';
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
             <Route path="/oca-demo" element={<OcaDemo />} />
             <Route path="/oca-phoenix" element={<OcaPhoenixDemo />} />
             <Route path="/cmmc" element={<Cmmc />} />
+            <Route path="/cmmc/assess" element={<CmmcAssess />} />
           </Routes>
         </main>
         <Footer />
