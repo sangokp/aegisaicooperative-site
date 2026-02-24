@@ -20,7 +20,7 @@ export default function HeroSection() {
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           className="absolute -top-[20%] -right-[10%] w-[600px] h-[600px] rounded-full"
           style={{
-            background: 'radial-gradient(circle, rgba(10,117,255,0.2) 0%, rgba(10,117,255,0.05) 40%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(255,126,95,0.2) 0%, rgba(255,126,95,0.05) 40%, transparent 70%)',
             filter: 'blur(60px)',
           }}
         />
@@ -34,7 +34,7 @@ export default function HeroSection() {
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
           className="absolute -bottom-[20%] -left-[15%] w-[500px] h-[500px] rounded-full"
           style={{
-            background: 'radial-gradient(circle, rgba(96,165,250,0.15) 0%, transparent 60%)',
+            background: 'radial-gradient(circle, rgba(255,176,154,0.15) 0%, transparent 60%)',
             filter: 'blur(80px)',
           }}
         />

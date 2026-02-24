@@ -23,7 +23,7 @@ export function generatePrintableReport(result, gaps, otWarnings, poamDetails, p
   const familyRows = CONTROL_FAMILIES.map(f => {
     const s = result.familyScores[f];
     return `<tr>
-      <td style="font-family:monospace;color:#0A75FF">${f}</td>
+      <td style="font-family:monospace;color:#FF7E5F">${f}</td>
       <td>${FAMILY_NAMES[f]}</td>
       <td style="text-align:center">${s.met}</td>
       <td style="text-align:center">${s.total - s.met}</td>
@@ -34,7 +34,7 @@ export function generatePrintableReport(result, gaps, otWarnings, poamDetails, p
 
   const gapRows = gaps.map(g => `<tr>
     <td><span style="display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-family:monospace;font-weight:600;color:${PRIORITY_COLORS[g.priority]};background:${PRIORITY_COLORS[g.priority]}15">${g.priority}</span></td>
-    <td style="font-family:monospace;color:#0A75FF">${g.controlId}</td>
+    <td style="font-family:monospace;color:#FF7E5F">${g.controlId}</td>
     <td>${g.title}</td>
     <td>${FAMILY_NAMES[g.family]}</td>
     <td style="font-size:12px">${g.estimatedEffort}</td>
@@ -47,7 +47,7 @@ export function generatePrintableReport(result, gaps, otWarnings, poamDetails, p
       <thead><tr><th>Control</th><th>Title</th><th>OT Consideration</th></tr></thead>
       <tbody>
         ${otWarnings.map(w => `<tr>
-          <td style="font-family:monospace;color:#0A75FF">${w.controlId}</td>
+          <td style="font-family:monospace;color:#FF7E5F">${w.controlId}</td>
           <td>${w.title}</td>
           <td style="font-size:12px">${w.otConsideration}</td>
         </tr>`).join('\n')}
@@ -70,7 +70,7 @@ export function generatePrintableReport(result, gaps, otWarnings, poamDetails, p
     table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 13px; }
     th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #e5e5e5; }
     th { font-weight: 600; background: #f5f5f5; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
-    .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 3px solid #0A75FF; }
+    .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 3px solid #FF7E5F; }
     .score-box { text-align: center; padding: 20px 32px; border: 2px solid ${passing ? '#22C55E' : '#EF4444'}; border-radius: 8px; }
     .score-value { font-size: 48px; font-weight: 700; font-family: monospace; color: ${passing ? '#22C55E' : '#EF4444'}; }
     .score-label { font-size: 12px; color: #666; margin-top: 4px; }

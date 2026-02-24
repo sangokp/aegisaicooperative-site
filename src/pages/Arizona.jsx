@@ -15,7 +15,7 @@ export default function Arizona() {
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
           className="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] rounded-full"
           style={{
-            background: 'radial-gradient(circle, rgba(10,117,255,0.15) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(255,126,95,0.15) 0%, transparent 70%)',
             filter: 'blur(80px)',
           }}
         />

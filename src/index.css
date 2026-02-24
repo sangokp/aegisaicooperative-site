@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════════════════
-   AEGIS DESIGN SYSTEM — "CYBER-NOIR" (v4.0)
-   Billion-dollar authority. Dark-first. AEGIS Blue accent.
+   AEGIS DESIGN SYSTEM — "WARM COMMUNITY" (v5.0)
+   Approachable authority. Dark-first. Warm Coral accent.
    ═══════════════════════════════════════════════════════════════════════════ */
 
 /* 1. Typography — Technical Authority */
@@ -25,11 +25,11 @@
   --aegis-text-secondary:#A1A1AA;
   --aegis-text-muted:    #71717A;
 
-  /* Accent — AEGIS Blue */
-  --aegis-accent:        #0A75FF;
-  --aegis-accent-hover:  #3B93FF;
-  --aegis-accent-muted:  rgba(10, 117, 255, 0.12);
-  --aegis-accent-glow:   rgba(10, 117, 255, 0.25);
+  /* Accent — Warm Coral */
+  --aegis-accent:        #FF7E5F;
+  --aegis-accent-hover:  #FF9A82;
+  --aegis-accent-muted:  rgba(255, 126, 95, 0.12);
+  --aegis-accent-glow:   rgba(255, 126, 95, 0.25);
 
   /* Signal Colors */
   --aegis-success:       #22C55E;
@@ -39,15 +39,15 @@
   /* Borders & Surfaces */
   --aegis-border:        rgba(255, 255, 255, 0.06);
   --aegis-border-hover:  rgba(255, 255, 255, 0.12);
-  --aegis-border-active: rgba(10, 117, 255, 0.3);
+  --aegis-border-active: rgba(255, 126, 95, 0.3);
   --aegis-glass-bg:      rgba(15, 15, 18, 0.8);
   --aegis-glass-border:  rgba(255, 255, 255, 0.06);
 
   /* Shadows & Glow */
   --aegis-shadow:        0 4px 24px -1px rgba(0, 0, 0, 0.4);
   --aegis-shadow-lg:     0 12px 48px -8px rgba(0, 0, 0, 0.6);
-  --aegis-glow:          0 0 60px rgba(10, 117, 255, 0.15);
-  --aegis-glow-sm:       0 0 30px rgba(10, 117, 255, 0.1);
+  --aegis-glow:          0 0 60px rgba(255, 126, 95, 0.15);
+  --aegis-glow-sm:       0 0 30px rgba(255, 126, 95, 0.1);
 
   /* Motion */
   --aegis-ease:          cubic-bezier(0.16, 1, 0.3, 1);
@@ -220,7 +220,7 @@
   }
 
   .gradient-text-blue {
-    background: linear-gradient(135deg, var(--aegis-accent) 0%, #60A5FA 50%, var(--aegis-accent) 100%);
+    background: linear-gradient(135deg, var(--aegis-accent) 0%, #FFB09A 50%, var(--aegis-accent) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

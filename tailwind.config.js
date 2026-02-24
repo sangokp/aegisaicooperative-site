@@ -12,8 +12,8 @@ export default {
         muted: '#18181b',
         foreground: '#fafafa',
         'foreground-muted': '#a1a1aa',
-        accent: '#3b82f6',
-        'accent-dark': '#2563eb',
+        accent: '#FF7E5F',
+        'accent-dark': '#e86a4d',
         border: '#27272a',
       },
       fontFamily: {
