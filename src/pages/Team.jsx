@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { Linkedin, ArrowRight } from 'lucide-react';
 import teamData from '../data/team.json';
 

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import HeroSection from "../components/HeroSection";
 import { ArrowRight } from 'lucide-react';
 import companyData from '../data/company.json';

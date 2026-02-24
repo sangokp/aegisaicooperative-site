@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Shield, Eye, Lock, Globe } from 'lucide-react';
 
 export default function Privacy() {

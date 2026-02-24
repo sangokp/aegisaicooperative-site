@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { Linkedin, ArrowLeft } from 'lucide-react';
 import teamData from '../data/team.json';
 

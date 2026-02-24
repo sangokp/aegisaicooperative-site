@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react';
 import blogData from '../data/blog.json';
 

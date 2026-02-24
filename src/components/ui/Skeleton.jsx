@@ -1,5 +1,7 @@
 'use client';
 
+import { motion } from 'framer-motion';
+
 export function Skeleton({
   className = '',
   variant = 'default',

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Scale, AlertTriangle } from 'lucide-react';
 
 export default function Terms() {

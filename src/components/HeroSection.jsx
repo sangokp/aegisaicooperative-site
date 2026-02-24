@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import companyData from '../data/company.json';
 
 export default function HeroSection() {
