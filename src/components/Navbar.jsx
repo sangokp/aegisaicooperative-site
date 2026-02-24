@@ -40,7 +40,7 @@ export default function Navbar() {
               <img
                 src="/aegis-logo.svg"
                 alt="AEGIS"
-                className="h-10 transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(255,126,95,0.4)]"
+                className="h-10 transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(139,111,71,0.4)]"
               />
             </Link>
 
@@ -73,7 +73,7 @@ export default function Navbar() {
 
               <Link
                 to="/contact"
-                className="px-5 py-2 text-[13px] font-semibold tracking-wide text-white bg-[var(--aegis-accent)] rounded-lg hover:bg-[var(--aegis-accent-hover)] transition-all hover:shadow-[0_0_20px_rgba(255,126,95,0.3)]"
+                className="px-5 py-2 text-[13px] font-semibold tracking-wide text-white bg-[var(--aegis-accent)] rounded-lg hover:bg-[var(--aegis-accent-hover)] transition-all hover:shadow-[0_0_20px_rgba(139,111,71,0.3)]"
               >
                 Get Started
               </Link>

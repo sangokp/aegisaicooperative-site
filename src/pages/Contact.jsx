@@ -58,7 +58,7 @@ export default function Contact() {
     }));
   };
 
-  const inputClasses = "w-full bg-[var(--aegis-engine)] border border-[var(--aegis-border)] rounded-lg px-4 py-3 text-[var(--aegis-text-primary)] placeholder:text-[var(--aegis-text-muted)] outline-none focus:border-[var(--aegis-accent)] focus:shadow-[0_0_0_3px_rgba(255,126,95,0.12)] transition-all";
+  const inputClasses = "w-full bg-[var(--aegis-engine)] border border-[var(--aegis-border)] rounded-lg px-4 py-3 text-[var(--aegis-text-primary)] placeholder:text-[var(--aegis-text-muted)] outline-none focus:border-[var(--aegis-accent)] focus:shadow-[0_0_0_3px_rgba(139,111,71,0.12)] transition-all";
 
   return (
     <div className="bg-[var(--aegis-void)]">

@@ -1,35 +1,36 @@
 /* ═══════════════════════════════════════════════════════════════════════════
    AEGIS DESIGN SYSTEM — "WARM COMMUNITY" (v5.0)
-   Approachable authority. Dark-first. Warm Coral accent.
+   Community-first. Light warm background. Tan/coral accent.
+   FROZEN: Do not change colors, layout, or typography without CEO approval.
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* 1. Typography — Technical Authority */
+/* 1. Typography */
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @import "tailwindcss";
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   THEME TOKENS
+   THEME TOKENS — WARM COMMUNITY (FROZEN)
    ═══════════════════════════════════════════════════════════════════════════ */
 
 :root {
-  /* Surface Architecture — Noir */
-  --aegis-void:          #09090B;
-  --aegis-engine:        #0F0F12;
-  --aegis-charcoal:      #18181B;
-  --aegis-surface:       #1C1C21;
-  --aegis-elevated:      #232329;
+  /* Surface Architecture — Warm Light */
+  --aegis-void:          #FFF8F0;
+  --aegis-engine:        #FFFFFF;
+  --aegis-charcoal:      #FFF0E6;
+  --aegis-surface:       #FFF5ED;
+  --aegis-elevated:      #FFFFFF;
 
-  /* Text Hierarchy */
-  --aegis-text-primary:  #F4F4F5;
-  --aegis-text-secondary:#A1A1AA;
-  --aegis-text-muted:    #71717A;
+  /* Text Hierarchy — Dark on Light */
+  --aegis-text-primary:  #1A1A1A;
+  --aegis-text-secondary:#5C5244;
+  --aegis-text-muted:    #8B7D6B;
 
-  /* Accent — Warm Coral */
-  --aegis-accent:        #FF7E5F;
-  --aegis-accent-hover:  #FF9A82;
-  --aegis-accent-muted:  rgba(255, 126, 95, 0.12);
-  --aegis-accent-glow:   rgba(255, 126, 95, 0.25);
+  /* Accent — Warm Tan/Coral */
+  --aegis-accent:        #8B6F47;
+  --aegis-accent-hover:  #A0845C;
+  --aegis-accent-muted:  rgba(139, 111, 71, 0.12);
+  --aegis-accent-glow:   rgba(139, 111, 71, 0.20);
 
   /* Signal Colors */
   --aegis-success:       #22C55E;
@@ -37,17 +38,17 @@
   --aegis-error:         #EF4444;
 
   /* Borders & Surfaces */
-  --aegis-border:        rgba(255, 255, 255, 0.06);
-  --aegis-border-hover:  rgba(255, 255, 255, 0.12);
-  --aegis-border-active: rgba(255, 126, 95, 0.3);
-  --aegis-glass-bg:      rgba(15, 15, 18, 0.8);
-  --aegis-glass-border:  rgba(255, 255, 255, 0.06);
+  --aegis-border:        rgba(139, 111, 71, 0.15);
+  --aegis-border-hover:  rgba(139, 111, 71, 0.25);
+  --aegis-border-active: rgba(139, 111, 71, 0.4);
+  --aegis-glass-bg:      rgba(255, 248, 240, 0.9);
+  --aegis-glass-border:  rgba(139, 111, 71, 0.12);
 
-  /* Shadows & Glow */
-  --aegis-shadow:        0 4px 24px -1px rgba(0, 0, 0, 0.4);
-  --aegis-shadow-lg:     0 12px 48px -8px rgba(0, 0, 0, 0.6);
-  --aegis-glow:          0 0 60px rgba(255, 126, 95, 0.15);
-  --aegis-glow-sm:       0 0 30px rgba(255, 126, 95, 0.1);
+  /* Shadows */
+  --aegis-shadow:        0 4px 24px -1px rgba(139, 111, 71, 0.1);
+  --aegis-shadow-lg:     0 12px 48px -8px rgba(139, 111, 71, 0.15);
+  --aegis-glow:          0 0 60px rgba(139, 111, 71, 0.1);
+  --aegis-glow-sm:       0 0 30px rgba(139, 111, 71, 0.08);
 
   /* Motion */
   --aegis-ease:          cubic-bezier(0.16, 1, 0.3, 1);
@@ -212,7 +213,7 @@
   /* ── Gradient Text ──────────────────────────────────────────────────── */
 
   .gradient-text {
-    background: linear-gradient(135deg, #fff 0%, var(--aegis-accent) 50%, #fff 100%);
+    background: linear-gradient(135deg, #1A1A1A 0%, var(--aegis-accent) 50%, #1A1A1A 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -220,14 +221,14 @@
   }
 
   .gradient-text-blue {
-    background: linear-gradient(135deg, var(--aegis-accent) 0%, #FFB09A 50%, var(--aegis-accent) 100%);
+    background: linear-gradient(135deg, var(--aegis-accent) 0%, #C4A06A 50%, var(--aegis-accent) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .gradient-text-static {
-    background: linear-gradient(135deg, #F4F4F5 0%, #A1A1AA 100%);
+    background: linear-gradient(135deg, #1A1A1A 0%, #5C5244 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -267,14 +268,14 @@
   /* ── Dot Grid Background ────────────────────────────────────────────── */
 
   .dot-grid {
-    background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(139,111,71,0.06) 1px, transparent 1px);
     background-size: 32px 32px;
   }
 
   .line-grid {
     background-image:
-      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      linear-gradient(rgba(139,111,71,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(139,111,71,0.04) 1px, transparent 1px);
     background-size: 64px 64px;
   }
 
@@ -423,7 +424,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.04) 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, rgba(139,111,71,0.06) 50%, transparent 100%);
     animation: shimmer 2s infinite;
   }
 
