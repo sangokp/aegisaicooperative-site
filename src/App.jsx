@@ -15,8 +15,12 @@ import Terms from './pages/Terms';
 import Arizona from './pages/Arizona';
 import OcaDemo from './pages/OcaDemo';
 import OcaPhoenixDemo from './pages/OcaPhoenixDemo';
-import Cmmc from './pages/Cmmc';
 import './index.css';
+
+function ExternalRedirect({ to }) {
+  window.location.href = to;
+  return null;
+}
 
 function App() {
   return (
@@ -39,7 +43,7 @@ function App() {
             <Route path="/arizona" element={<Arizona />} />
             <Route path="/oca-demo" element={<OcaDemo />} />
             <Route path="/oca-phoenix" element={<OcaPhoenixDemo />} />
-            <Route path="/cmmc" element={<Cmmc />} />
+            <Route path="/cmmc" element={<ExternalRedirect to="https://aegisos.ai/docs/cmmc" />} />
           </Routes>
         </main>
         <Footer />

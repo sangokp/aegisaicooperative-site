@@ -236,7 +236,6 @@ export default function Contact() {
                         <option value="creative">Creative</option>
                         <option value="operations">Operations</option>
                         <option value="marketing">Marketing</option>
-                        <option value="security">Security</option>
                       </select>
                     </div>
                   </div>
