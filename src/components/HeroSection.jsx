@@ -1,83 +1,153 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import companyData from '../data/company.json';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center overflow-hidden bg-[var(--aegis-void)] py-12 md:py-20">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
 
-      {/* Subtle background grid */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `linear-gradient(var(--aegis-accent) 1px, transparent 1px), linear-gradient(90deg, var(--aegis-accent) 1px, transparent 1px)`,
-            backgroundSize: 'clamp(50px, 10vw, 100px) clamp(50px, 10vw, 100px)'
-          }}
-        />
+      {/* Background layers */}
+      <div className="absolute inset-0">
+        {/* Dot grid */}
+        <div className="absolute inset-0 dot-grid opacity-60" />
 
+        {/* Primary orb — top right */}
         <motion.div
           animate={{
-            rotate: 360,
-            scale: [1, 1.05, 1],
+            scale: [1, 1.15, 1],
+            opacity: [0.3, 0.5, 0.3],
           }}
-          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-1/4 -right-1/4 w-[400px] md:w-[800px] h-[400px] md:h-[800px] rounded-full bg-[radial-gradient(circle,var(--aegis-accent-muted)_0%,transparent_70%)] blur-2xl md:blur-3xl opacity-20 md:opacity-30"
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-[20%] -right-[10%] w-[600px] h-[600px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(10,117,255,0.2) 0%, rgba(10,117,255,0.05) 40%, transparent 70%)',
+            filter: 'blur(60px)',
+          }}
         />
+
+        {/* Secondary orb — bottom left */}
+        <motion.div
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.15, 0.3, 0.15],
+          }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute -bottom-[20%] -left-[15%] w-[500px] h-[500px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(96,165,250,0.15) 0%, transparent 60%)',
+            filter: 'blur(80px)',
+          }}
+        />
+
+        {/* Horizon line */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--aegis-accent)]/20 to-transparent" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full">
-        <div className="flex flex-col items-center text-center">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 relative z-10 w-full">
+        <div className="max-w-4xl">
 
+          {/* Label */}
           <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <span className="section-label text-[var(--aegis-accent)]">
+              AEGIS AI Cooperative
+            </span>
+          </motion.div>
+
+          {/* Headline */}
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-5xl"
+            transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-extrabold leading-[1.05] text-[var(--aegis-text-primary)] mt-6 mb-8 tracking-tight"
           >
-            <p className="small-caps text-[10px] md:text-xs text-[var(--aegis-rust)] mb-6 md:mb-10 tracking-[0.3em] md:tracking-[0.4em] uppercase font-semibold">
-              AEGIS AI Cooperative
-            </p>
+            {companyData.hero.headline.split('Community Intelligence').map((part, i, arr) =>
+              i < arr.length - 1 ? (
+                <span key={i}>
+                  {part}
+                  <span className="gradient-text-blue">Community Intelligence</span>
+                </span>
+              ) : (
+                <span key={i}>{part}</span>
+              )
+            )}
+          </motion.h1>
 
-            <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-medium leading-[1.1] md:leading-[1.05] text-[var(--aegis-text-primary)] mb-8 md:mb-12 tracking-tight px-2">
-              {companyData.hero.headline}
-            </h1>
+          {/* Subheadline */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="text-lg md:text-xl text-[var(--aegis-text-secondary)] font-body leading-relaxed mb-12 max-w-2xl"
+          >
+            {companyData.hero.subheadline}
+          </motion.p>
 
-            <p className="text-base md:text-xl lg:text-2xl text-[var(--aegis-text-secondary)] font-body font-light leading-relaxed mb-10 md:mb-16 max-w-3xl mx-auto px-4">
-              {companyData.hero.subheadline}
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center w-full max-w-sm sm:max-w-none mx-auto">
-              <Link
-                to={companyData.hero.cta.secondary.link}
-                className="btn-premium w-full sm:w-auto group flex items-center justify-center gap-4 py-4 md:py-5"
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col sm:flex-row gap-4"
+          >
+            <Link
+              to={companyData.hero.cta.secondary.link}
+              className="btn-premium group flex items-center justify-center gap-3 py-4"
+            >
+              {companyData.hero.cta.secondary.text}
+              <motion.span
+                animate={{ x: [0, 4, 0] }}
+                transition={{ repeat: Infinity, duration: 2 }}
+                className="text-lg"
               >
-                {companyData.hero.cta.secondary.text}
-                <motion.span
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ repeat: Infinity, duration: 2 }}
-                >
-                  &rarr;
-                </motion.span>
-              </Link>
-              <Link
-                to={companyData.hero.cta.primary.link}
-                className="btn-outline-premium w-full sm:w-auto hover:border-[var(--aegis-rust)] py-4 md:py-5"
-              >
-                {companyData.hero.cta.primary.text}
-              </Link>
-            </div>
+                &rarr;
+              </motion.span>
+            </Link>
+            <Link
+              to={companyData.hero.cta.primary.link}
+              className="btn-outline-premium py-4"
+            >
+              {companyData.hero.cta.primary.text}
+            </Link>
           </motion.div>
+
+          {/* Proof Strip */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 1 }}
+            className="flex flex-wrap gap-6 mt-16 pt-8 border-t border-[var(--aegis-border)]"
+          >
+            {companyData.proofStrip.map((item, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-[var(--aegis-accent)]" />
+                <span className="text-sm text-[var(--aegis-text-muted)] font-mono tracking-wide">
+                  {item.label}
+                </span>
+              </div>
+            ))}
+          </motion.div>
+
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.3 }}
+        animate={{ opacity: 0.4 }}
         transition={{ delay: 2 }}
-        className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 hidden sm:block"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2"
       >
-        <div className="w-[1px] h-8 md:h-12 bg-gradient-to-b from-[var(--aegis-text-primary)] to-transparent" />
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          className="w-5 h-8 rounded-full border border-[var(--aegis-border-hover)] flex items-start justify-center p-1"
+        >
+          <div className="w-1 h-2 rounded-full bg-[var(--aegis-accent)]" />
+        </motion.div>
       </motion.div>
     </section>
   );

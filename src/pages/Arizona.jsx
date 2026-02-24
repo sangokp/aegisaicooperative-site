@@ -1,25 +1,27 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 export default function Arizona() {
   return (
-    <main className="min-h-screen bg-[#0f0f0f] text-[#FAFAFA] relative overflow-hidden font-body">
+    <main className="min-h-screen bg-[var(--aegis-void)] text-[var(--aegis-text-primary)] relative overflow-hidden font-body">
       {/* Background */}
-      <div className="absolute inset-0 pointer-events-none opacity-10">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `linear-gradient(#c45d3a 1px, transparent 1px), linear-gradient(90deg, #c45d3a 1px, transparent 1px)`,
-            backgroundSize: '100px 100px'
-          }}
-        />
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 dot-grid opacity-40" />
         <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-1/2 -right-1/2 w-[150%] h-[150%] bg-[radial-gradient(circle,rgba(196,93,58,0.1)_0%,transparent_70%)] blur-3xl"
+          animate={{
+            scale: [1, 1.15, 1],
+            opacity: [0.2, 0.35, 0.2],
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(10,117,255,0.15) 0%, transparent 70%)',
+            filter: 'blur(80px)',
+          }}
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-32 pb-24 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 pt-32 pb-24 relative z-10">
         <div className="flex flex-col items-center text-center">
 
           <motion.div
@@ -27,7 +29,7 @@ export default function Arizona() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
           >
-            <img src="/aegis-logo.svg" alt="AEGIS" className="h-12 mb-12 invert" />
+            <img src="/aegis-logo.svg" alt="AEGIS" className="h-12 mb-12" />
           </motion.div>
 
           <motion.div
@@ -36,30 +38,30 @@ export default function Arizona() {
             transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-5xl"
           >
-            <p className="small-caps text-xs text-[#c45d3a] mb-12 tracking-[0.4em] uppercase font-bold">
+            <span className="section-label text-[var(--aegis-accent)] mb-12 block">
               Phoenix, Arizona // April 2026
-            </p>
+            </span>
 
-            <h1 className="font-display text-5xl md:text-8xl lg:text-9xl font-bold leading-[0.9] text-white mb-12 tracking-tighter">
+            <h1 className="font-display text-5xl md:text-8xl lg:text-9xl font-extrabold leading-[0.9] text-white mb-12 tracking-tighter">
               Community <br />
-              <span className="italic font-normal opacity-50">Intelligence.</span>
+              <span className="gradient-text-blue italic font-normal">Intelligence.</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-[#A1A1AA] font-light leading-relaxed mb-16 max-w-3xl mx-auto px-4">
+            <p className="text-xl md:text-2xl text-[var(--aegis-text-secondary)] font-light leading-relaxed mb-16 max-w-3xl mx-auto px-4">
               Join the AEGIS AI Cooperative in Phoenix for a live demonstration of AI-powered community infrastructure.
               STEM education, grant accountability, and human-centered technology in action.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link
                 to="/contact"
-                className="bg-[#c45d3a] text-white px-10 py-5 font-body text-xs uppercase tracking-[0.3em] font-bold hover:bg-[#a84d2f] transition-all shadow-[0_0_30px_rgba(196,93,58,0.3)]"
+                className="btn-premium py-5 px-10"
               >
                 Inquire for Access
               </Link>
               <Link
                 to="/"
-                className="border border-[rgba(255,255,255,0.1)] text-[#FAFAFA] px-10 py-5 font-body text-xs uppercase tracking-[0.3em] font-bold hover:border-[#c45d3a] hover:text-[#c45d3a] transition-all"
+                className="btn-outline-premium py-5 px-10"
               >
                 Return Home
               </Link>
@@ -73,34 +75,43 @@ export default function Arizona() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.5, delay: 0.8 }}
-          className="mt-40 grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-[rgba(255,255,255,0.08)] pt-24"
+          className="mt-40 grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-[var(--aegis-border)] pt-24"
         >
-          <div className="space-y-6">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-[#c45d3a]">01 / Education</p>
-            <h3 className="font-display text-3xl font-bold">STEM for Everyone</h3>
-            <p className="text-[#A1A1AA] leading-relaxed">
-              See how AI-powered learning tools bring advanced technical literacy to students and community leaders without complexity or fear.
-            </p>
-          </div>
-          <div className="space-y-6">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-[#c45d3a]">02 / Accountability</p>
-            <h3 className="font-display text-3xl font-bold">Grant Transparency</h3>
-            <p className="text-[#A1A1AA] leading-relaxed">
-              Every grant dollar tracked. Every outcome measured. Live dashboards that show funders exactly where their investment goes.
-            </p>
-          </div>
-          <div className="space-y-6">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-[#c45d3a]">03 / Community</p>
-            <h3 className="font-display text-3xl font-bold">Human-Centered AI</h3>
-            <p className="text-[#A1A1AA] leading-relaxed">
-              Technology that augments what communities already do well. People stay in control. AI handles the complexity.
-            </p>
-          </div>
+          {[
+            {
+              num: '01',
+              title: 'STEM for Everyone',
+              label: 'Education',
+              desc: 'See how AI-powered learning tools bring advanced technical literacy to students and community leaders without complexity or fear.'
+            },
+            {
+              num: '02',
+              title: 'Grant Transparency',
+              label: 'Accountability',
+              desc: 'Every grant dollar tracked. Every outcome measured. Live dashboards that show funders exactly where their investment goes.'
+            },
+            {
+              num: '03',
+              title: 'Human-Centered AI',
+              label: 'Community',
+              desc: 'Technology that augments what communities already do well. People stay in control. AI handles the complexity.'
+            }
+          ].map((item, index) => (
+            <div key={index} className="card-noir p-8">
+              <span className="font-mono text-xs text-[var(--aegis-accent)] tracking-wider block mb-4">
+                {item.num} / {item.label}
+              </span>
+              <h3 className="font-display text-2xl font-bold mb-3">{item.title}</h3>
+              <p className="text-[var(--aegis-text-secondary)] leading-relaxed text-sm">
+                {item.desc}
+              </p>
+            </div>
+          ))}
         </motion.div>
       </div>
 
-      <footer className="py-12 border-t border-[rgba(255,255,255,0.05)] text-center opacity-30">
-        <p className="text-[9px] uppercase tracking-[0.3em]">2026 AEGIS AI Cooperative // Arizona Event</p>
+      <footer className="py-12 border-t border-[var(--aegis-border)] text-center">
+        <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--aegis-text-muted)]">2026 AEGIS AI Cooperative // Arizona Event</p>
       </footer>
     </main>
   );
