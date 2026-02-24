@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Linkedin, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Mail, Linkedin, MapPin, Send, CheckCircle, ArrowRight } from 'lucide-react';
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -58,21 +57,21 @@ export default function Contact() {
     }));
   };
 
-  const inputClasses = "w-full bg-[var(--aegis-engine)] border border-[var(--aegis-border)] rounded-lg px-4 py-3 text-[var(--aegis-text-primary)] placeholder:text-[var(--aegis-text-muted)] outline-none focus:border-[var(--aegis-accent)] focus:shadow-[0_0_0_3px_rgba(139,111,71,0.12)] transition-all";
-
   return (
     <div className="bg-[var(--aegis-void)]">
 
       {/* Hero */}
-      <section className="py-24 md:py-32 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+      <section className="py-24 md:py-32 max-w-7xl mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.8 }}
           className="max-w-4xl"
         >
-          <span className="section-label">Get in Touch</span>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.08] text-[var(--aegis-text-primary)] mt-4 mb-8 tracking-tight">
+          <p className="small-caps text-xs text-[var(--aegis-rust)] mb-6 tracking-[0.2em]">
+            Get in Touch
+          </p>
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] text-[var(--aegis-text-primary)] mb-8">
             Start a Conversation
           </h1>
           <p className="text-lg md:text-xl text-[var(--aegis-text-secondary)] leading-relaxed max-w-2xl">
@@ -81,58 +80,67 @@ export default function Contact() {
         </motion.div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-        <div className="divider" />
+      {/* Divider */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <hr className="border-t border-[var(--aegis-border)]" />
       </div>
 
       {/* Contact Grid */}
-      <section className="py-24 md:py-32 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+      <section className="py-24 md:py-32 max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
 
           {/* Info Panel */}
-          <div className="lg:col-span-4 space-y-10">
+          <div className="lg:col-span-4 space-y-12">
             <div>
-              <span className="section-label text-[var(--aegis-text-muted)] mb-5 block">Co-Founders</span>
+              <p className="small-caps text-xs text-[var(--aegis-sage)] mb-6 tracking-[0.15em]">
+                Co-Founders
+              </p>
               <div className="space-y-4">
-                {[
-                  { name: 'Ji Won Jeong', email: 'hermes@aegisos.ai' },
-                  { name: 'Michael Kelly', email: 'Michaelkelly@aegisos.ai' },
-                  { name: 'Felicia Wang', email: 'Feliciawang@aegisos.ai' },
-                ].map((person) => (
-                  <div key={person.email}>
-                    <p className="text-[var(--aegis-text-primary)] font-medium text-sm">{person.name}</p>
-                    <a href={`mailto:${person.email}`} className="text-[var(--aegis-accent)] hover:text-[var(--aegis-accent-hover)] transition-colors text-sm">
-                      {person.email}
-                    </a>
-                  </div>
-                ))}
+                <div>
+                  <p className="text-[var(--aegis-text-primary)] font-medium">Ji Won Jeong</p>
+                  <a href="mailto:g1@aegisos.ai" className="text-[var(--aegis-rust)] hover:text-[var(--aegis-accent-hover)] transition-colors">
+                    g1@aegisos.ai
+                  </a>
+                </div>
+                <div>
+                  <p className="text-[var(--aegis-text-primary)] font-medium">Michael Kelly</p>
+                  <a href="mailto:Michaelkelly@aegisos.ai" className="text-[var(--aegis-rust)] hover:text-[var(--aegis-accent-hover)] transition-colors">
+                    Michaelkelly@aegisos.ai
+                  </a>
+                </div>
+                <div>
+                  <p className="text-[var(--aegis-text-primary)] font-medium">Felicia Wang</p>
+                  <a href="mailto:Feliciawang@aegisos.ai" className="text-[var(--aegis-rust)] hover:text-[var(--aegis-accent-hover)] transition-colors">
+                    Feliciawang@aegisos.ai
+                  </a>
+                </div>
               </div>
             </div>
 
             <div>
-              <span className="section-label text-[var(--aegis-text-muted)] mb-4 block">Connect</span>
+              <p className="small-caps text-xs text-[var(--aegis-sage)] mb-4 tracking-[0.15em]">
+                Connect
+              </p>
               <a
                 href="https://www.linkedin.com/company/aegis-ai-cooperative/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-[var(--aegis-text-secondary)] hover:text-[var(--aegis-accent)] transition-colors text-sm"
+                className="inline-flex items-center gap-2 text-[var(--aegis-text-primary)] hover:text-[var(--aegis-rust)] transition-colors"
               >
-                <Linkedin size={16} />
-                AEGIS on LinkedIn
+                <Linkedin size={18} />
+                <span>AEGIS on LinkedIn</span>
               </a>
             </div>
 
             <div>
-              <span className="section-label text-[var(--aegis-text-muted)] mb-4 block">Location</span>
-              <p className="text-[var(--aegis-text-primary)] text-sm">Phoenix, Arizona</p>
-              <p className="text-[var(--aegis-text-muted)] text-xs mt-1">Distributed Team</p>
+              <p className="small-caps text-xs text-[var(--aegis-sage)] mb-4 tracking-[0.15em]">
+                Location
+              </p>
+              <p className="text-[var(--aegis-text-primary)]">Phoenix, Arizona</p>
+              <p className="text-[var(--aegis-text-secondary)] text-sm">Distributed Team</p>
             </div>
 
-            <div className="card-noir p-5">
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-2 h-2 rounded-full bg-[var(--aegis-success)]" />
-                <span className="font-mono text-xs text-[var(--aegis-text-muted)]">Response Time</span>
-              </div>
+            <div className="p-6 border border-[var(--aegis-sage)]/30 bg-[var(--aegis-sage)]/5">
               <p className="text-[var(--aegis-text-secondary)] text-sm leading-relaxed">
                 Our team typically responds within 24 hours during business days.
               </p>
@@ -141,34 +149,34 @@ export default function Contact() {
 
           {/* Form Panel */}
           <div className="lg:col-span-8">
-            <div className="card-noir p-8 md:p-10">
+            <div className="p-8 md:p-12 border border-[var(--aegis-border)] bg-[var(--aegis-surface)]">
               {isSubmitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-16"
                 >
-                  <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--aegis-accent-muted)] border border-[var(--aegis-border-active)] flex items-center justify-center">
-                    <CheckCircle className="w-8 h-8 text-[var(--aegis-accent)]" />
+                  <div className="w-20 h-20 mx-auto mb-8 rounded-full bg-[var(--aegis-sage)]/20 border border-[var(--aegis-sage)]/30 flex items-center justify-center">
+                    <CheckCircle className="w-10 h-10 text-[var(--aegis-sage)]" />
                   </div>
-                  <h3 className="font-display text-2xl font-bold text-[var(--aegis-text-primary)] mb-3">
+                  <h3 className="font-display text-3xl font-medium text-[var(--aegis-text-primary)] mb-4">
                     Message Received
                   </h3>
-                  <p className="text-[var(--aegis-text-secondary)]">
+                  <p className="text-lg text-[var(--aegis-text-secondary)]">
                     Thank you for reaching out. We'll be in touch soon.
                   </p>
                   <button
                     onClick={() => setIsSubmitted(false)}
-                    className="mt-6 text-[var(--aegis-accent)] text-sm font-medium hover:text-[var(--aegis-accent-hover)] transition-colors"
+                    className="mt-8 text-[var(--aegis-rust)] text-sm border-b border-[var(--aegis-rust)] hover:text-[var(--aegis-accent-hover)] transition-colors"
                   >
-                    Send another message &rarr;
+                    Send another message
                   </button>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  <div className="grid md:grid-cols-2 gap-8">
                     <div className="space-y-2">
-                      <label className="text-xs font-mono text-[var(--aegis-text-muted)] uppercase tracking-wider">
+                      <label className="text-xs text-[var(--aegis-text-muted)] uppercase tracking-widest">
                         Name
                       </label>
                       <input
@@ -178,11 +186,11 @@ export default function Contact() {
                         value={formState.name}
                         onChange={handleChange}
                         placeholder="Your full name"
-                        className={inputClasses}
+                        className="w-full bg-[var(--aegis-void)] border border-[var(--aegis-border)] px-4 py-3 text-[var(--aegis-text-primary)] placeholder:text-[var(--aegis-text-muted)] outline-none focus:border-[var(--aegis-rust)] transition-colors"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-xs font-mono text-[var(--aegis-text-muted)] uppercase tracking-wider">
+                      <label className="text-xs text-[var(--aegis-text-muted)] uppercase tracking-widest">
                         Email
                       </label>
                       <input
@@ -192,14 +200,14 @@ export default function Contact() {
                         value={formState.email}
                         onChange={handleChange}
                         placeholder="your@email.com"
-                        className={inputClasses}
+                        className="w-full bg-[var(--aegis-void)] border border-[var(--aegis-border)] px-4 py-3 text-[var(--aegis-text-primary)] placeholder:text-[var(--aegis-text-muted)] outline-none focus:border-[var(--aegis-rust)] transition-colors"
                       />
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-2 gap-8">
                     <div className="space-y-2">
-                      <label className="text-xs font-mono text-[var(--aegis-text-muted)] uppercase tracking-wider">
+                      <label className="text-xs text-[var(--aegis-text-muted)] uppercase tracking-widest">
                         Organization
                       </label>
                       <input
@@ -208,18 +216,18 @@ export default function Contact() {
                         value={formState.company}
                         onChange={handleChange}
                         placeholder="Company or entity"
-                        className={inputClasses}
+                        className="w-full bg-[var(--aegis-void)] border border-[var(--aegis-border)] px-4 py-3 text-[var(--aegis-text-primary)] placeholder:text-[var(--aegis-text-muted)] outline-none focus:border-[var(--aegis-rust)] transition-colors"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-xs font-mono text-[var(--aegis-text-muted)] uppercase tracking-wider">
+                      <label className="text-xs text-[var(--aegis-text-muted)] uppercase tracking-widest">
                         Department
                       </label>
                       <select
                         name="department"
                         value={formState.department}
                         onChange={handleChange}
-                        className={`${inputClasses} appearance-none cursor-pointer`}
+                        className="w-full bg-[var(--aegis-void)] border border-[var(--aegis-border)] px-4 py-3 text-[var(--aegis-text-primary)] outline-none focus:border-[var(--aegis-rust)] transition-colors appearance-none cursor-pointer"
                       >
                         <option value="general">General Inquiry</option>
                         <option value="executive">Executive</option>
@@ -233,7 +241,7 @@ export default function Contact() {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-xs font-mono text-[var(--aegis-text-muted)] uppercase tracking-wider">
+                    <label className="text-xs text-[var(--aegis-text-muted)] uppercase tracking-widest">
                       Message
                     </label>
                     <textarea
@@ -243,18 +251,18 @@ export default function Contact() {
                       value={formState.message}
                       onChange={handleChange}
                       placeholder="Tell us about your project or inquiry..."
-                      className={`${inputClasses} resize-none`}
+                      className="w-full bg-[var(--aegis-void)] border border-[var(--aegis-border)] px-4 py-3 text-[var(--aegis-text-primary)] placeholder:text-[var(--aegis-text-muted)] outline-none focus:border-[var(--aegis-rust)] transition-colors resize-none"
                     />
                   </div>
 
                   {submitError && (
-                    <div className="card-noir p-4 border-[var(--aegis-error)]/30 text-center">
-                      <p className="text-[var(--aegis-error)] text-sm mb-2">{submitError.message}</p>
+                    <div className="p-4 border border-red-300 bg-red-50 text-center">
+                      <p className="text-red-700 text-sm mb-2">{submitError.message}</p>
                       <a
                         href={submitError.fallbackUrl}
-                        className="text-[var(--aegis-accent)] text-sm font-medium hover:text-[var(--aegis-accent-hover)]"
+                        className="text-[var(--aegis-rust)] underline text-sm"
                       >
-                        Open email client &rarr;
+                        Open email client
                       </a>
                     </div>
                   )}
@@ -262,15 +270,12 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-premium w-full flex items-center justify-center gap-2 py-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-[var(--aegis-text-primary)] text-[var(--aegis-void)] px-8 py-4 text-sm uppercase tracking-widest font-semibold hover:bg-[var(--aegis-rust)] transition-colors flex items-center justify-center gap-2"
                   >
-                    {isSubmitting ? (
-                      <span className="flex items-center gap-2">
-                        <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                        Sending...
-                      </span>
-                    ) : (
-                      <>Send Message <Send size={16} /></>
+                    {isSubmitting ? 'Sending...' : (
+                      <>
+                        Send Message <Send size={16} />
+                      </>
                     )}
                   </button>
                 </form>

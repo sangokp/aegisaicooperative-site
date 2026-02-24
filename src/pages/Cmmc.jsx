@@ -209,20 +209,12 @@ export default function Cmmc() {
             We are looking for MEP centers and cybersecurity advisors who work with defense manufacturers
             to pilot this tool on a real CMMC Level 2 engagement.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 bg-[var(--aegis-text-primary)] text-[var(--aegis-void)] px-8 py-4 text-sm uppercase tracking-widest font-semibold hover:bg-[var(--aegis-rust)] transition-colors"
-            >
-              Get in Touch <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link
-              to="/cmmc/assess"
-              className="inline-flex items-center gap-2 border border-[var(--aegis-border)] text-[var(--aegis-text-primary)] px-8 py-4 text-sm uppercase tracking-widest font-semibold hover:border-[var(--aegis-rust)] hover:text-[var(--aegis-rust)] transition-colors"
-            >
-              Try Self-Assessment <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 bg-[var(--aegis-text-primary)] text-[var(--aegis-void)] px-8 py-4 text-sm uppercase tracking-widest font-semibold hover:bg-[var(--aegis-rust)] transition-colors"
+          >
+            Get in Touch <ArrowRight className="w-4 h-4" />
+          </Link>
           <p className="text-sm text-[var(--aegis-text-muted)] mt-6">
             AEGIS AI Cooperative, Mesa, Arizona
           </p>
