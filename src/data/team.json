@@ -1,29 +1,29 @@
 {
   "headline": "The team behind AEGIS",
-  "subheadline": "A specialized unit building the trust architecture for sovereign AI.",
+  "subheadline": "A small, focused team building AI systems that respect human agency.",
   "members": [
     {
       "id": "dan",
-      "name": "Ji Won Jeong",
-      "role": "Co-Founder",
-      "focus": "Trust Architecture & AI Systems",
-      "bio": "Building sovereign AI infrastructure where autonomy is earned through verification. Obsessed with making AI systems you can actually trust.",
+      "name": "Dan (Ji Won Jeong)",
+      "role": "Co-Founder, CEO",
+      "focus": "Trust Architecture & Strategy",
+      "bio": "Leading the vision for trust-first AI systems. Background in economics and AI research, building AEGIS OS—the infrastructure layer that makes AI accountable.",
       "linkedin": "https://www.linkedin.com/company/aegis-ai-cooperative/"
     },
     {
       "id": "michael",
       "name": "Michael Kelly",
-      "role": "Co-Founder",
-      "focus": "Creative Systems & Partnerships",
-      "bio": "Exploring the intersection of AI and creative industries. Turning ambitious ideas into real-world partnerships and products.",
+      "role": "Co-Founder, Creative Director",
+      "focus": "Creative Automation & Partnerships",
+      "bio": "Bridging creative vision with technical implementation. Leading AI-assisted content creation initiatives and strategic business development.",
       "linkedin": "https://www.linkedin.com/company/aegis-ai-cooperative/"
     },
     {
       "id": "felicia",
-      "name": "Felicia Wang",
-      "role": "Co-Founder",
-      "focus": "Brand & Communications",
-      "bio": "Shaping how the world sees AEGIS. Building authentic connections and telling the story of what we're creating.",
+      "name": "Felicia",
+      "role": "Co-Founder, Marketing",
+      "focus": "Brand & Community",
+      "bio": "Building the AEGIS brand and community presence. Focused on communicating the value of trust architecture to enterprises and organizations.",
       "linkedin": "https://www.linkedin.com/company/aegis-ai-cooperative/"
     }
   ],

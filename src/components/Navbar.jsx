@@ -4,11 +4,9 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
-  { name: 'Philosophy', path: '/about' },
-  { name: 'Capabilities', path: '/services' },
-  { name: 'CMMC', path: '/cmmc' },
-  { name: 'Alliances', path: '/partners' },
-  { name: 'Research', path: '/blog' },
+  { name: 'About', path: '/about' },
+  { name: 'Partners', path: '/partners' },
+  { name: 'Blog', path: '/blog' },
 ];
 
 export default function Navbar() {

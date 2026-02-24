@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import HeroSection from "../components/HeroSection";
-import MetricsStrip from "../components/MetricsStrip";
 import { ArrowRight, Shield, BookOpen, Eye, Users } from 'lucide-react';
 import companyData from '../data/company.json';
 import partnershipsData from '../data/partnerships.json';
@@ -15,8 +14,6 @@ export default function Home() {
   return (
     <div className="bg-[var(--aegis-void)]">
       <HeroSection />
-
-      <MetricsStrip />
 
       {/* ═══════════════════════════════════════════════════════════════════
           THE COOPERATIVE DIFFERENCE
