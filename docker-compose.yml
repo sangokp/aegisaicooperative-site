@@ -38,7 +38,7 @@ services:
       - "traefik.http.routers.aegis-cooperative.middlewares=aegis-coop-redirect@docker,aegis-coop-headers@docker"
 
       # Specify Docker network for Traefik
-      - "traefik.docker.network=root_default"
+      - "traefik.docker.network=dokploy-network"
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1/"]
@@ -48,7 +48,10 @@ services:
       start_period: 5s
     networks:
       - root_default
+      - dokploy-network
 
 networks:
   root_default:
+    external: true
+  dokploy-network:
     external: true
