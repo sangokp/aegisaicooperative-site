@@ -46,7 +46,7 @@ jobs:
                 - "traefik.http.routers.aegis-cooperative.rule=Host(`aegisaicooperative.com`) || Host(`www.aegisaicooperative.com`)"
                 - "traefik.http.routers.aegis-cooperative.entrypoints=web,websecure"
                 - "traefik.http.routers.aegis-cooperative.tls=true"
-                - "traefik.http.routers.aegis-cooperative.tls.certresolver=mytlschallenge"
+                - "traefik.http.routers.aegis-cooperative.tls.certresolver=letsencrypt"
                 - "traefik.http.routers.aegis-cooperative.service=aegis-cooperative-service"
                 - "traefik.http.services.aegis-cooperative-service.loadbalancer.server.port=80"
                 - "traefik.http.middlewares.aegis-coop-redirect.redirectregex.regex=^https?://www\\.aegisaicooperative\\.com/(.*)"
