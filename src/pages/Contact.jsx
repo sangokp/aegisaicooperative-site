@@ -104,12 +104,6 @@ export default function Contact() {
                   </a>
                 </div>
                 <div>
-                  <p className="text-[var(--aegis-text-primary)] font-medium">Michael Kelly</p>
-                  <a href="mailto:Michaelkelly@aegisos.ai" className="text-[var(--aegis-rust)] hover:text-[var(--aegis-accent-hover)] transition-colors">
-                    Michaelkelly@aegisos.ai
-                  </a>
-                </div>
-                <div>
                   <p className="text-[var(--aegis-text-primary)] font-medium">Felicia Wang</p>
                   <a href="mailto:Feliciawang@aegisos.ai" className="text-[var(--aegis-rust)] hover:text-[var(--aegis-accent-hover)] transition-colors">
                     Feliciawang@aegisos.ai
